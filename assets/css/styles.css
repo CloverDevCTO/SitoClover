@@ -1,0 +1,546 @@
+/*
+ * Clover Venture - European Innovation Hub
+ * Main Stylesheet
+ * * --- TABLE OF CONTENTS ---
+ * 1. BRAND & GLOBAL SETTINGS
+ * - CSS Variables (Colors, Fonts, Layout)
+ * - Base Styles & Resets
+ * - Typography Scale
+ * - Container & Layout
+ * - Accessibility & Motion
+ * 2. COMPONENTS
+ * - Buttons
+ * - Petal Cards
+ * - Language Switcher
+ * - Icons (Inline SVG)
+ * 3. HEADER & FOOTER
+ * - Header
+ * - Footer
+ * 4. SECTIONS & PAGES
+ * - Hero Section
+ * - Community Intro
+ * - Participants Ticker
+ * - Mentors Preview & Grid
+ * - Logo Wall (Partners)
+ * - CTA Band
+ * - Generic Page Hero
+ * - Cookie Banner
+ * 5. RESPONSIVE BREAKPOINTS
+ * - Tablet (1023px)
+ * - Mobile (639px)
+*/
+
+/* 1. BRAND & GLOBAL SETTINGS */
+/* --- CSS Variables --- */
+:root {
+    /* Colors */
+    --primary-gradient: linear-gradient(135deg, #005B7C 0%, #00BDA8 100%);
+    --primary-turquoise: #00BDA8;
+    --primary-blue: #005B7C;
+    --neutral-ink: #0B0F12;
+    --neutral-white: #FFFFFF;
+    --neutral-light-bg: #F6F8FA;
+    --accent-red-tint: rgba(246, 0, 0, 0.25);
+    --accent-pink-tint: rgba(240, 167, 207, 0.25);
+    --accent-yellow-tint: rgba(243, 217, 160, 0.25);
+    --shadow-color: rgba(0, 0, 0, 0.08);
+    --shadow-color-hover: rgba(0, 0, 0, 0.12);
+
+    /* Typography */
+    --font-heading: 'Poppins', system-ui, -apple-system, sans-serif;
+    --font-body: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+
+    /* Layout */
+    --container-width: 1200px;
+    --gutter-desktop: 24px;
+    --gutter-mobile: 16px;
+    --tap-height: 48px;
+
+    /* Motion */
+    --transition-duration: 200ms;
+    --transition-timing: ease-out;
+}
+
+/* --- Base Styles & Resets --- */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 24px;
+    color: var(--neutral-ink);
+    background-color: var(--neutral-white);
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    transition: color var(--transition-duration) var(--transition-timing);
+}
+
+a:hover {
+    color: var(--primary-turquoise);
+}
+
+img, svg {
+    max-width: 100%;
+    height: 20px;
+    display: block;
+}
+
+/* --- Typography Scale --- */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    font-weight: 600;
+}
+
+h1 { font-size: 44px; line-height: 52px; }
+h2 { font-size: 32px; line-height: 40px; }
+h3 { font-size: 24px; line-height: 32px; }
+p.subheading { font-size: 18px; line-height: 28px; color: #555; }
+small { font-size: 14px; line-height: 20px; }
+
+/* --- Container & Layout --- */
+.container {
+    max-width: var(--container-width);
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: var(--gutter-desktop);
+    padding-right: var(--gutter-desktop);
+}
+
+section {
+    padding: 80px 0;
+}
+
+/* --- Accessibility & Motion --- */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+    .btn:hover, .petal-card:hover {
+        transform: none !important;
+    }
+}
+
+:focus-visible {
+    outline: 2px solid var(--primary-turquoise);
+    outline-offset: 2px;
+    border-radius: 4px;
+}
+
+/* 2. COMPONENTS */
+/* --- Buttons --- */
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 24px;
+    height: var(--tap-height);
+    min-width: var(--tap-height);
+    border-radius: 5px;
+    font-family: var(--font-heading);
+    font-weight: 500;
+    font-size: 16px;
+    text-align: center;
+    border-top-right-radius: 16px;
+    border-bottom-left-radius: 16px;
+    cursor: pointer;
+    transition: all var(--transition-duration) var(--transition-timing);
+}
+
+.btn-primary {
+    background: var(--primary-gradient);
+    color: var(--neutral-white);
+    border-color: transparent;
+    box-shadow: 0 4px 12px var(--shadow-color);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--primary-blue);
+    border-color: var(--primary-blue);
+}
+
+.btn:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 16px rgba(0, 91, 124, 0.2);
+}
+
+.btn-secondary:hover {
+    background-color: var(--primary-blue);
+    color: var(--neutral-white);
+}
+
+/* --- Petal Cards --- */
+.petal-card {
+    background-color: var(--neutral-white);
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 8px 24px var(--shadow-color);
+    transition: all var(--transition-duration) var(--transition-timing);
+    text-align: center;
+}
+
+.petal-card:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 16px 40px var(--shadow-color-hover);
+}
+
+/* --- Language Switcher --- */
+.language-switcher {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ddd;
+    border-radius: 9999px;
+    padding: 4px;
+}
+
+.language-switcher a {
+    padding: 4px 12px;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 9999px;
+    transition: all var(--transition-duration) var(--transition-timing);
+}
+
+.language-switcher a.lang-active,
+.language-switcher a:hover {
+    background-color: var(--primary-turquoise);
+    color: var(--neutral-white);
+}
+
+
+/* 3. HEADER & FOOTER */
+/* --- Header --- */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    background-color: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid #eee;
+    padding: 16px 0;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo img {
+    height: 45px;
+    object-fit: contain;
+}
+
+header nav {
+    display: none; /* Mobile first approach will hide it */
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 24px;
+}
+
+header nav a {
+    font-size: 15px;
+    font-weight: 500;
+    padding-bottom: 4px;
+    position: relative;
+}
+
+header nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--primary-turquoise);
+    transition: width var(--transition-duration) var(--transition-timing);
+}
+
+header nav a:hover::after,
+header nav a.active::after {
+    width: 100%;
+}
+
+header .header-actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+/* --- Footer --- */
+footer {
+    background-color: var(--neutral-light-bg);
+    padding: 40px 0;
+    text-align: center;
+    font-size: 14px;
+    color: #555;
+    line-height: 1.6;
+}
+
+footer .footer-links {
+    margin-top: 16px;
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+}
+
+/* 4. SECTIONS & PAGES */
+/* --- Hero Section --- */
+.hero {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--neutral-white);
+    padding: 0 var(--gutter-desktop);
+    overflow: hidden;
+}
+
+.hero-slideshow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+}
+
+.hero-slideshow .slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out;
+    transform: scale(1.05);
+}
+
+.hero-slideshow .slide.active {
+    opacity: 1;
+    transform: scale(1);
+    transition: opacity 0.8s ease-in-out, transform 4s ease-out;
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(11, 15, 18, 0.8) 0%, rgba(11, 15, 18, 0.2) 100%);
+    z-index: -1;
+}
+
+.hero-content {
+    max-width: 800px;
+}
+
+.hero h1 {
+    font-size: 52px;
+    line-height: 1.1;
+    margin-bottom: 16px;
+}
+
+.hero p {
+    font-size: 20px;
+    line-height: 1.5;
+    margin-bottom: 32px;
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+}
+
+.hero-buttons .btn-secondary {
+    color: var(--neutral-white);
+    border-color: var(--neutral-white);
+}
+.hero-buttons .btn-secondary:hover {
+    background-color: var(--neutral-white);
+    color: var(--primary-blue);
+}
+
+/* --- Community Intro --- */
+.intro { text-align: center; }
+.intro p { max-width: 800px; margin: 0 auto 24px; font-size: 18px; line-height: 1.6; }
+.impact-metrics { font-family: var(--font-heading); font-weight: 500; font-size: 18px; }
+
+/* --- Participants Ticker --- */
+.participants {
+    background-color: var(--neutral-light-bg);
+    overflow: hidden;
+    padding: 60px 0;
+}
+
+.participants h2 { text-align: center; margin-bottom: 40px; }
+
+.ticker-wrap {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.ticker-wrap:hover .ticker {
+    animation-play-state: paused;
+}
+
+.ticker {
+    display: inline-block;
+    padding-left: 100%;
+    animation: ticker 25s linear infinite;
+    font-size: 24px;
+    font-family: var(--font-heading);
+    color: #888;
+}
+
+.ticker span {
+    padding: 0 20px;
+    color: #555;
+}
+
+@keyframes ticker {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+}
+
+/* --- Mentors Preview --- */
+.mentors-preview { text-align: center; }
+.mentors-preview h2 { margin-bottom: 40px; }
+.mentor-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+    margin-bottom: 40px;
+}
+
+/* --- Logo Wall --- */
+.logo-wall {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 48px;
+}
+
+.logo-wall img {
+    height: 48px;
+    object-fit: contain;
+    filter: grayscale(1);
+    opacity: 0.7;
+    transition: all var(--transition-duration) var(--transition-timing);
+}
+
+.logo-wall img:hover {
+    filter: grayscale(0);
+    opacity: 1;
+    transform: scale(1.05);
+}
+
+/* --- CTA Band --- */
+.cta-band {
+    background: var(--primary-gradient);
+    color: var(--neutral-white);
+    text-align: center;
+    padding: 60px 0;
+}
+
+.cta-band h2 {
+    margin-bottom: 24px;
+}
+.cta-band .btn {
+    background: var(--neutral-white);
+    color: var(--primary-blue);
+}
+
+/* --- Generic Page Hero --- */
+.hero-page {
+    padding: 120px 0 60px;
+    background-color: var(--neutral-light-bg);
+    text-align: center;
+}
+.hero-page h1 {
+    margin-bottom: 16px;
+}
+
+/* --- Cookie Banner --- */
+.cookie-banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--neutral-ink);
+    color: var(--neutral-white);
+    padding: 16px;
+    z-index: 200;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+}
+.cookie-banner .btn {
+    background-color: var(--primary-turquoise);
+    height: 40px;
+    padding: 0 20px;
+}
+
+/* 5. RESPONSIVE BREAKPOINTS */
+/* --- Tablet (1023px) --- */
+@media (min-width: 640px) {
+    header nav {
+        display: block;
+    }
+    .header-actions .btn {
+        display: inline-flex;
+    }
+}
+
+/* --- Mobile (639px) --- */
+@media (max-width: 639px) {
+    .container {
+        padding-left: var(--gutter-mobile);
+        padding-right: var(--gutter-mobile);
+    }
+    h1 { font-size: 36px; line-height: 44px; }
+    h2 { font-size: 28px; line-height: 36px; }
+    .hero h1 { font-size: 40px; }
+    .hero p { font-size: 18px; }
+    .hero-buttons { flex-direction: column; }
+    section { padding: 60px 0; }
+    .ticker { font-size: 18px; }
+    .cookie-banner {
+        flex-direction: column;
+        text-align: center;
+        gap: 16px;
+    }
+}
