@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Scroll Example</title>
+</head>
+
+<body onload="animateScroll()">
+  <div class="logo-item"><img src="assets/img/loghi/Datapizza.png" alt="DataPizza"></div>
+  <div class="logo-item"><img src="assets/img/loghi/UN.png" alt="United Nations"></div>
+  <div class="logo-item"><img src="assets/img/loghi/Greencome.png" alt="GreenCome"></div>
+  <div class="logo-item"><img src="assets/img/loghi/Enactus.png" alt="Enactus"></div>
+  <div class="logo-item"><img src="assets/img/loghi/SigmaSquared.png" alt="Sigma Squared"></div>
+  <div class="logo-item"><img src="assets/img/loghi/Unicredit.png" alt="UniCredit"></div>
+  <div class="logo-item"><img src="assets/img/loghi/SACMI.png" alt="SACMI"></div>
+  <div class="logo-item"><img src="assets/img/loghi/CC Padova.png" alt="Camera di Commercio di Padova"></div>
+  
+  <script>
+    var element = document.getElementById('scrollElement');
+
+// Creiamo la classe per l'animazione
+element.className += ' logo-item';
+
+// Aggiungo il seguente script a JS
+document.body.appendChild(element);
+
+function animateScroll() {
+  // Calcola il numero di righe in un elemento HTML
+  var rows = element.rows;
+
+  // Faccio scorrere la barra indietro per N righe (es. 10)
+  for(var i=rows-5; i>0; i-=2) {
+
+    // Aggiungo il seguente riga alla classe "logo-item"
+    element.className += ' logo-item';
+
+    // Aspetta un secondo
+    setTimeout(function() {
+      // Rimuovi la classe "logo-item" dalla riga precedente
+      element.className = element.className.replace(' logo-item', '');
+      
+      if (i === 1) { 
+        return; // Finisce l'animazione se raggiunge il fondo dell'elemento HTML
+      }
+    }, 500);
+  }
+
+  setTimeout(function() {
+    // Rimuovi la classe "logo-item" dalla riga precedente
+    element.className = element.className.replace(' logo-item', '');
+    
+    if (rows === 1) { 
+      return; // Finisce l'animazione se raggiunge il fondo dell'elemento HTML
+    }
+  }, 500);
+}
+
+// Inviamo la funzione animateScroll alla callback
+animateScroll();
+  </script>
+</body>
+</html>

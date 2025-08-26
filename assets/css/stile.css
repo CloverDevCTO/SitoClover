@@ -447,10 +447,7 @@ header .header-actions {
             font-weight: 600;
             color: var(--medium-gray);
             transition: var(--transition);
-            border-radius: 8px 2px 8px 2px;
             margin-right: 2rem;
-            background: rgba(0, 189, 168, 0.05);
-            border: 1px solid rgba(0, 189, 168, 0.1);
         }
 
         .logo-item:hover {
@@ -644,6 +641,14 @@ header .header-actions {
             padding: 0 3rem;
             font-size: 1.2rem;
             font-weight: 500;
+        }
+
+        .ticker-item {
+            transition: all 0.5s ease-in-out;
+        }
+        
+        .ticker-item.active {
+            transform: translateX(-100%);
         }
 
         .ticker-item .highlight {

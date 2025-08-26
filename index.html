@@ -59,14 +59,44 @@
     cookieBanner.querySelector('button').addEventListener('click', () => {
         cookieBanner.style.display = 'none';
     });
-});
+
+    const tickerItems = document.querySelectorAll('.ticker-item');
+    let tickerIndex = 0;
+
+    setInterval(() => {
+        const currentItem = tickerItems[tickerIndex];
+        const nextItem = tickerItems[(tickerIndex + 1) % tickerItems.length];
+
+        // Elimina la classe 'active' dal primo item
+        currentItem.classList.remove('active');
+
+        // Aggiunge la classe 'active' al secondo item
+        nextItem.classList.add('active');
+
+        // Cambia l'indice per scorrere al prossimo item
+        tickerIndex = (tickerIndex + 1) % tickerItems.length;
+
+        currentItem.style.transform = 'translateX(-100%)';
+    }, 5000); // Scorrimento ogni 5 secondi
+
+    // Funzione per aggiungere la classe "active" all'ultimo item quando il loop finisce
+    function aggiungiClassaActive() {
+        if (tickerIndex === tickerItems.length - 1) {
+            const lastItem = tickerItems[tickerItems.length - 1];
+            lastItem.classList.add('active');
+        }
+    }
+
+    setInterval(aggungiClassaActive, 5000);
+    
+    });
     </script>
 </head>
 <body>
     <header>
         <div class="header-container">
             <a href="/" class="logo">
-                <div class="logo-icon"></div>
+                <img src="assets/img/LogoClover.png" height="65" width="65" alt="Logo Clover Venture">
             </a>
             
             <nav id="nav">
@@ -123,22 +153,14 @@
     <section class="partner-logos">
         <div class="logos-container">
             <div class="logos-track">
-                <div class="logo-item">Microsoft</div>
-                <div class="logo-item">Google</div>
-                <div class="logo-item">AWS</div>
-                <div class="logo-item">Accenture</div>
-                <div class="logo-item">Deloitte</div>
-                <div class="logo-item">IBM</div>
-                <div class="logo-item">Oracle</div>
-                <div class="logo-item">Salesforce</div>
-                <div class="logo-item">SAP</div>
-                <div class="logo-item">Adobe</div>
-                <!-- Duplicate for seamless loop -->
-                <div class="logo-item">Microsoft</div>
-                <div class="logo-item">Google</div>
-                <div class="logo-item">AWS</div>
-                <div class="logo-item">Accenture</div>
-                <div class="logo-item">Deloitte</div>
+                <div class="logo-item"><img src="assets/img/loghi/Datapizza.png" alt="DataPizza"></div>
+                <div class="logo-item"><img src="assets/img/loghi/UN.png" alt="United Nations"></div>
+                <div class="logo-item"><img src="assets/img/loghi/Greencome.png" alt="GreenCome"></div>
+                <div class="logo-item"><img src="assets/img/loghi/Enactus.png" alt="Enactus"></div>
+                <div class="logo-item"><img src="assets/img/loghi/SigmaSquared.png" alt="Sigma Squared"></div>
+                <div class="logo-item"><img src="assets/img/loghi/Unicredit.png" alt="UniCredit"></div>
+                <div class="logo-item"><img src="assets/img/loghi/SACMI.png" alt="SACMI"></div>
+                <div class="logo-item"><img src="assets/img/loghi/CC Padova.png" alt="Camera di Commercio di Padova"></div>
             </div>
         </div>
     </section>
@@ -415,7 +437,7 @@
                 <p>Innovation professionals con esperienza internazionale nell'execution e nell'ingegneria dell'innovazione</p>
             </div>
             
-            <div class="team-grid"><!--GT todo far ruotare, icone, sfondi, testo, infinite loop, slideshow dei testimonials, foto ai mentors-->
+            <div class="team-grid"><!--GT todo far ruotare questa card con testo dietro, sfondi diversi, infinite loop, slideshow dei testimonials, foto ai mentors-->
                 <div class="team-card">
                     <div class="team-avatar">
                         <img class="avatar-placeholder" src="assets/img/PaoloLicata.png">
@@ -1177,7 +1199,7 @@
         // Navigation functionality
         document.addEventListener('DOMContentLoaded', function() {
             // Load logo image
-            async function loadLogo() {
+            /*async function loadLogo() {
                 try {
                     // Try to load the uploaded PNG logo
                     const possibleNames = ['LogoClover.png', 'clover-venture-logo.png', 'clover.png', 'Logo.png'];
@@ -1213,7 +1235,7 @@
                 }
             }
 
-            loadLogo();
+            loadLogo();*/
 
             const navLinks = document.querySelectorAll('.nav-link');
             const sections = document.querySelectorAll('.nav-section');
