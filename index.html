@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clover Venture - European Innovation Hub</title>
+    <title>Clover Venture — European Innovation Hub</title>
     <meta name="description" content="European Innovation Hub connecting enterprises, scale-ups, talents and investors to turn real problems into measurable pilots and growth.">
     <meta name="author" content="Clover Venture">
     <meta property="og:title" content="Clover Venture - European Innovation Hub">
@@ -13,10 +13,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@clover_venture">
     <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png">
-    <link rel="stylesheet" href="assets/css/styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/stile.css">
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -30,114 +27,1449 @@
       ]
     }
     </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+    // Hero Slideshow
+    const slides = document.querySelectorAll('.heroriginal-slideshow .slide');
+    let currentSlide = 0;
+    setInterval(() => {
+        slides[currentSlide].classList.remove('active');
+        currentSlide = (currentSlide + 1) % slides.length;
+        slides[currentSlide].classList.add('active');
+    }, 4000);
+
+    // Language Switcher
+    const langSwitcher = document.querySelector('.language-switcher');
+    if(langSwitcher) {
+        const userLang = navigator.language || navigator.userLanguage;
+        if (userLang.startsWith('it')) {
+            // Logic to switch to Italian
+        }
+    }
+
+    // Cookie Banner
+    const cookieBanner = document.createElement('div');
+    cookieBanner.innerHTML = `
+        <div class="cookie-banner">
+            <p>We use cookies to enhance your experience. By continuing to visit this site you agree to our use of cookies.</p>
+            <button class="btn btn-primary">Accept</button>
+        </div>
+    `;
+    document.body.appendChild(cookieBanner);
+    cookieBanner.querySelector('button').addEventListener('click', () => {
+        cookieBanner.style.display = 'none';
+    });
+});
+    </script>
 </head>
 <body>
-
     <header>
-        <div class="container">
-            <a href="index.html" class="logo">
-                <img src="assets/img/LogoClover.png" alt="Clover Venture">
+        <div class="header-container">
+            <a href="/" class="logo">
+                <div class="logo-icon"></div>
             </a>
-            <nav>
+            
+            <nav id="nav">
                 <ul>
-                    <li><a href="open-innovation.html">Innovation</a><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" data-slot="icon" style="color: #00BDA8; display: inline-flex; align-items: center; vertical-align: middle;" focusable="false"><path fill-rule="evenodd" d="M12.53 16.28a.75.75 0 0 1-1.06 0l-7.5-7.5a.75.75 0 0 1 1.06-1.06L12 14.69l6.97-6.97a.75.75 0 1 1 1.06 1.06l-7.5 7.5Z" clip-rule="evenodd"></path></svg></li>
+                    <li><a href="open-innovation.html">Innovation services</a><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" data-slot="icon" style="color: #00BDA8; display: inline-flex; align-items: center; vertical-align: middle;" focusable="false"><path fill-rule="evenodd" d="M12.53 16.28a.75.75 0 0 1-1.06 0l-7.5-7.5a.75.75 0 0 1 1.06-1.06L12 14.69l6.97-6.97a.75.75 0 1 1 1.06 1.06l-7.5 7.5Z" clip-rule="evenodd"></path></svg></li>
                     <li><a href="ecosystem.html">Ecosystem</a></li>
-                    <li><a href="team.html">About Us</a><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" data-slot="icon" style="color: #00BDA8; display: inline-flex; align-items: center; vertical-align: middle;"><path fill-rule="evenodd" d="M12.53 16.28a.75.75 0 0 1-1.06 0l-7.5-7.5a.75.75 0 0 1 1.06-1.06L12 14.69l6.97-6.97a.75.75 0 1 1 1.06 1.06l-7.5 7.5Z" clip-rule="evenodd"></path></svg></li>
+                    <li><a href="team.html" class="nav-link">About Us</a><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" data-slot="icon" style="color: #00BDA8; display: inline-flex; align-items: center; vertical-align: middle;"><path fill-rule="evenodd" d="M12.53 16.28a.75.75 0 0 1-1.06 0l-7.5-7.5a.75.75 0 0 1 1.06-1.06L12 14.69l6.97-6.97a.75.75 0 1 1 1.06 1.06l-7.5 7.5Z" clip-rule="evenodd"></path></svg></li>
+                    <!--li><a href="/ecosistema" class="nav-link">Ecosistema</a></li>
+                    <li><a href="/servizi" class="nav-link">Servizi</a></li>
+                    <li><a href="/chi-siamo" class="nav-link">Chi Siamo</a></li-->
                 </ul>
             </nav>
-            <div class="header-actions">
-                <a href="contact.html" class="btn btn-primary">Join Ecosystem</a>
-                <div class="language-switcher">
-                    <a href="#" class="lang-active">EN</a>
-                    <a href="#">IT</a>
-                </div>
-            </div>
+
+            <button class="mobile-menu-toggle" id="mobile-toggle">☰</button>
+            <a href="/contact" class="cta-button">Unisciti all'Ecosistema</a>
         </div>
     </header>
 
-    <main>
-        <section class="hero">
-            <div class="hero-slideshow">
+    <section id="home" class="heroriginal">
+            <div class="heroriginal-slideshow">
                 <div class="slide active" style="background-image: url('assets/img/HERO_Foto_hackers_working.png');"></div>
                 <div class="slide" style="background-image: url('assets/img/HERO_Foto_talento_1.png');"></div>
                 <div class="slide" style="background-image: url('assets/img/HERO_Foto_talento_2.png');"></div>
                 <div class="slide" style="background-image: url('assets/img/HERO_Foto_corporate_evento.png');"></div>
             </div>
-            <div class="hero-content">
+            <div class="heroriginal-content">
                 <h1>Community for Innovation</h1>
                 <p>Empowering open innovation through talents, scale-ups, VCs and enterprises.</p>
+                <div class="heroriginal-buttons">
+                    <a href="contact.html" class="cta-button">Join Ecosystem</a>
+                    <a href="/events" class="btn btn-secondary">Explore Events</a>
+                </div>
+            </div>
+        </section>
+    <!--section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content fade-in-up">
+                <h1>Community per l'<span class="highlight">Innovazione</span></h1>
+                <p>Potenziamo l'innovazione aperta attraverso talenti, scale-up, VC e aziende.</p>
                 <div class="hero-buttons">
-                    <a href="contact.html" class="btn btn-primary">Join Ecosystem</a>
-                    <a href="#events" class="btn btn-secondary">Explore Events</a>
+                    <a href="/servizi" class="cta-button">Unisciti all'Ecosistema</a>
+                    <a href="/ecosistema" class="btn-secondary">Esplora Eventi</a>
                 </div>
             </div>
-        </section>
+        </div>
+        
+        <div class="scroll-indicator">
+            <span>SCROLL</span>
+            <div class="scroll-icon"></div>
+        </div>
+    </section-->
 
-        <section class="intro">
-            <div class="container">
-                <p>Clover Venture is a European Innovation Hub connecting enterprises, scale-ups, talents and investors to transform real challenges into measurable outcomes.</p>
-                <div class="impact-metrics">
-                    <span>50+ events</span> &middot;
-                    <span>36+ countries</span> &middot;
-                    <span>1000+ founders</span> &middot;
-                    <span>1250+ students trained</span>
+    <!-- Partner Logos - SUBITO SOTTO -->
+    <section class="partner-logos">
+        <div class="logos-container">
+            <div class="logos-track">
+                <div class="logo-item">Microsoft</div>
+                <div class="logo-item">Google</div>
+                <div class="logo-item">AWS</div>
+                <div class="logo-item">Accenture</div>
+                <div class="logo-item">Deloitte</div>
+                <div class="logo-item">IBM</div>
+                <div class="logo-item">Oracle</div>
+                <div class="logo-item">Salesforce</div>
+                <div class="logo-item">SAP</div>
+                <div class="logo-item">Adobe</div>
+                <!-- Duplicate for seamless loop -->
+                <div class="logo-item">Microsoft</div>
+                <div class="logo-item">Google</div>
+                <div class="logo-item">AWS</div>
+                <div class="logo-item">Accenture</div>
+                <div class="logo-item">Deloitte</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="stats">
+        <div class="container">
+            <div class="section-title">
+                <h2>Generiamo Connettendo</h2>
+                <p>Il nostro ecosistema europeo selezionato crea impatto e promuove innovazione ogni giorno, superando le sfide di un'Europa in cerca di competitività tecnologica.</p>
+            </div>
+            <div class="stats-grid">
+                <div class="stat-item interactive-element">
+                    <div class="stat-number">870+</div>
+                    <div class="stat-label">Startup nell'Ecosistema</div>
+                </div>
+                <div class="stat-item interactive-element">
+                    <div class="stat-number">110+</div>
+                    <div class="stat-label">Selected Investor</div>
+                </div>
+                <div class="stat-item interactive-element">
+                    <div class="stat-number">1500+</div>
+                    <div class="stat-label">Talenti Formati</div>
+                </div>
+                <div class="stat-item interactive-element">
+                    <div class="stat-number">36+</div>
+                    <div class="stat-label">Paesi Coinvolti</div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section class="participants">
-            <div class="container">
-                <h2>Participants to Our Events</h2>
-                <div class="ticker-wrap">
-                    <div class="ticker">
-                        <span>Cristina Scocchia &bull; Roberto Crosta &bull; Betty Pagnin &bull; Roberto Santolamazza &bull; Bruno Giordano &bull; Ettore Penazzato &bull; Federico De Stefani &bull; Monica Scarpa &bull; Allegra Violante &bull; Marco Podini &bull; Ada Rosa Balzan &bull; Anna Fiscale &bull; Lucio Brotto &bull; Francesca Manfredini &bull; Gelindo Bordin &bull; Alessandro Lunelli &bull; Cecilia Nostro</span>
+    <section class="petal-cards">
+        <div class="container">
+            <div class="section-title">
+                <h2>Know-how, Ecosistema e Execution</h2>
+                <p>L'Ingegneria dell'Innovazione di Clover Venture. Metodologie proprietarie testate sul campo per risultati concreti e misurabili.</p>
+            </div>
+            
+            <div class="cards-grid">
+                <div class="petal-card glow-on-hover">
+                    <div class="card-icon">
+                        <svg viewBox="0 0 24 24" fill="none">
+                            <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/>
+                            <rect x="8" y="2" width="8" height="4" rx="1" ry="1"/>
+                            <path d="M9 12l2 2 4-4"/>
+                        </svg>
+                    </div>
+                    <h3>Open Innovation Strutturata</h3>
+                    <p>La nostra metodologia proprietaria trasforma la collaborazione con startup da "innovation theatre" a partnership strategiche con risultati concreti.</p>
+                    <div class="card-metrics">
+                        <span>85% successo pilot • 60% tempi ridotti • ROI misurabile</span>
+                    </div>
+                </div>
+                
+                <div class="petal-card glow-on-hover">
+                    <div class="card-icon">
+                        <svg viewBox="0 0 24 24" fill="none">
+                            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+                            <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+                            <path d="M8 12h8"/>
+                            <path d="M8 8h8"/>
+                        </svg>
+                    </div>
+                    <h3>Formazione Avanzata</h3>
+                    <p>Programmi di formazione su AI, Robotica, IoT, ESG e Design Thinking. Framework concreti e immediatamente applicabili per trasformare la cultura aziendale.</p>
+                    <div class="card-metrics">
+                        <span>50% tempi decisionali ridotti • 35% progetti al mercato</span>
+                    </div>
+                </div>
+                
+                <div class="petal-card glow-on-hover">
+                    <div class="card-icon">
+                        <svg viewBox="0 0 24 24" fill="none">
+                            <path d="M9 12l2 2 4-4"/>
+                            <path d="M21 12c-1 0-3-1-3-3s2-3 3-3 3 1 3 3-2 3-3 3"/>
+                            <path d="M3 12c1 0 3-1 3-3s-2-3-3-3-3 1-3 3 2 3 3 3"/>
+                            <path d="M13 12h3a2 2 0 0 1 2 2v1"/>
+                            <path d="M11 12H8a2 2 0 0 0-2 2v1"/>
+                        </svg>
+                    </div>
+                    <h3>Venture Clienting</h3>
+                    <p>Integra soluzioni innovative da startup esterne e supporto nel Corporate Venture Building per iniziative interne, riducendo rischi e tempi.</p>
+                    <div class="card-metrics">
+                        <span>40% time-to-market ridotto • 280% ROI medio • 6-9 mesi operativi</span>
+                    </div>
+                </div>
+                
+                <div class="petal-card glow-on-hover">
+                    <div class="card-icon">
+                        <svg viewBox="0 0 24 24" fill="none">
+                            <path d="M3 3v18h18"/>
+                            <path d="M18.7 8l-5.1 5.2-2.8-2.7L7 14.3"/>
+                            <circle cx="18.7" cy="8" r="1"/>
+                            <circle cx="13.6" cy="13.2" r="1"/>
+                            <circle cx="10.8" cy="10.5" r="1"/>
+                        </svg>
+                    </div>
+                    <h3>Osservatorio - Insight & Report</h3>
+                    <p>Analisi, report e casi studio proprietari per una visione completa e actionable sulle tecnologie emergenti e metodologie di execution.</p>
+                    <div class="card-metrics">
+                        <span>Trend analysis • Data-driven decisions • Strategic insights</span>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section class="mentors-preview">
-            <div class="container">
-                <h2>Our International Mentors</h2>
-                <div class="mentor-grid">
-                    </div>
-                <a href="mentors.html" class="btn btn-secondary">View All Mentors</a>
+    <!-- Ticker GT todo: renderlo infinito -->
+    <section class="ticker-section">
+        <div class="ticker-container">
+            <span class="ticker-item">
+                🌐 <span class="highlight">European Innovation Hub</span> • Connecting enterprises, scale-ups, talents and investors
+            </span>
+            <span class="ticker-item">
+                🚀 <span class="highlight">Real Problems</span> • Turning challenges into measurable pilots and growth
+            </span>
+            <span class="ticker-item">
+                🤝 <span class="highlight">Global Community</span> • VC, aziende e talenti per l'innovazione aperta
+            </span>
+            <span class="ticker-item">
+                💡 <span class="highlight">Execution First</span> • Know-how proprietario e risultati concreti
+            </span>
+        </div>
+    </section>
+
+    <!-- Methodology Pillars -->
+    <section class="methodology-pillars">
+        <div class="container">
+            <div class="section-title">
+                <h2>I Nostri Pilastri Metodologici</h2>
+                <p>Un approccio pragmatico e orientato all'execution che genera risultati concreti e misurabili</p>
             </div>
-        </section>
-
-        <section class="partners">
-            <div class="container">
-                <h2>Ecosystem Partners</h2>
-                <div class="logo-wall">
-                    <img src="assets/img/Logo Partner Sigma Squared.jpeg" alt="Sigma Squared">
-                    <img src="assets/img/Logo partner Unicredit.jpg" alt="Unicredit">
-                    <img src="assets/img/Loro partner SACMI.jpg" alt="SACMI">
-                    <img src="assets/img/Logo partner infocamere.png" alt="Infocamere">
+            
+            <div class="pillars-grid">
+                <div class="pillar-card">
+                    <div class="pillar-number">01</div>
+                    <h3>Metodologie Testate sul Campo</h3>
+                    <p>Framework proprietari sviluppati e validati da founder che hanno affrontato le stesse sfide di execution e risk mitigation. Le nostre competenze si basano su esperienza diretta, non teorie accademiche.</p>
+                </div>
+                
+                <div class="pillar-card">
+                    <div class="pillar-number">02</div>
+                    <h3>Focus sui Risultati Misurabili</h3>
+                    <p>Ogni progetto ha KPI chiari e misurabili. Non ci accontentiamo di consegnare report, ma di generare impatto quantificabile e ROI concreto per i nostri partner.</p>
+                </div>
+                
+                <div class="pillar-card">
+                    <div class="pillar-number">03</div>
+                    <h3>Ecosistema Integrato Globale</h3>
+                    <p>Accesso immediato a una rete di partner, startup, talenti e investitori all'interno del nostro ecosistema europeo e internazionale, che accelerano l'execution e riducono il time-to-market.</p>
                 </div>
             </div>
-        </section>
 
-        <section class="cta-band">
-            <div class="container">
-                <h2>Join Ecosystem</h2>
-                <a href="contact.html" class="btn btn-primary">Get in Touch</a>
+            <div class="methodology-tags">
+                <span class="method-tag">Innovation Mentoring</span>
+                <span class="method-tag">Design Thinking</span>
+                <span class="method-tag">Lean Startup</span>
+                <span class="method-tag">Sprint Methodology</span>
+                <span class="method-tag">Open Innovation</span>
+                <span class="method-tag">Venture Building</span>
             </div>
-        </section>
-    </main>
+        </div>
+    </section>
 
+    <!-- NextGen Hackathon -->
+    <section class="nextgen-hackathon">
+        <div class="container">
+            <div class="section-title">
+                <h2>Hackathon NextGen</h2>
+                <p>Abbiamo creato l'evento di innovazione più grande d'Italia: L'Ingegneria dell'Innovazione in Azione</p>
+            </div>
+            
+            <div class="hackathon-hero">
+                <div class="hackathon-content">
+                    <h3>Innovazione aperta che genera valore concreto</h3>
+                    <p>Abbiamo orchestrato strategicamente 3 regioni, 15 PMI e 8 università. Oltre 210 talenti NextGen hanno sviluppato più di 50 soluzioni innovative su sfide critiche di sostenibilità e AI.</p>
+                    <div class="success-rate">
+                        <span class="big-number">75%</span>
+                        <span class="success-text">di tasso di successo nell'execution</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="impact-grid">
+                <div class="impact-item">
+                    <div class="impact-icon">
+                        <svg viewBox="0 0 24 24" fill="none">
+                            <circle cx="12" cy="12" r="3"/>
+                            <path d="m12 1 3 6 6 3-6 3-3 6-3-6-6-3 6-3 3-6z"/>
+                        </svg>
+                    </div>
+                    <h4>+2M Reach</h4>
+                    <p>Impatto mediatico e visibilità</p>
+                </div>
+                
+                <div class="impact-item">
+                    <div class="impact-icon">
+                        <svg viewBox="0 0 24 24" fill="none">
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                            <rect x="2" y="9" width="4" height="12"/>
+                            <circle cx="4" cy="4" r="2"/>
+                        </svg>
+                    </div>
+                    <h4>+500 Post LinkedIn</h4>
+                    <p>Engagement e networking</p>
+                </div>
+                
+                <div class="impact-item">
+                    <div class="impact-icon">
+                        <svg viewBox="0 0 24 24" fill="none">
+                            <path d="M3 3v18h18"/>
+                            <path d="M18.7 8l-5.1 5.2-2.8-2.7L7 14.3"/>
+                        </svg>
+                    </div>
+                    <h4>35% Idee Implementate</h4>
+                    <p>Progetti attivi post-evento</p>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <section class="ecosystem-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Il Nostro Ecosistema</h2>
+                <p>Una rete di relazioni strategiche e un network globale che connette Corporate, Startup, PMI, Investitori, Università ed Istituzioni per creare opportunità di valore condiviso.</p>
+            </div>
+            
+            <div class="ecosystem-grid">
+                <div class="ecosystem-item">
+                    <div class="eco-number">30+</div>
+                    <h4>Corporate Partners</h4>
+                    <p>Aziende leader che co-creano soluzioni innovative e definiscono sfide reali per l'ecosistema</p>
+                </div>
+                
+                <div class="ecosystem-item">
+                    <div class="eco-number">500+</div>
+                    <h4>Startup</h4>
+                    <p>Scale-up validate e pronte al mercato, con accesso a opportunità di pilot e mentorship internazionale</p>
+                </div>
+                
+                <div class="ecosystem-item">
+                    <div class="eco-number">110+</div>
+                    <h4>Investor Selezionati</h4>
+                    <p>Fondi di VC, Business Angels e Corporate VC con focus strategico sull'innovazione europea</p>
+                </div>
+                
+                <div class="ecosystem-item">
+                    <div class="eco-number">1500+</div>
+                    <h4>Talenti NextGen</h4>
+                    <p>Giovani innovatori con competenze avanzate pronti a guidare la trasformazione nelle aziende</p>
+                </div>
+                
+                <div class="ecosystem-item">
+                    <div class="eco-number">15+</div>
+                    <h4>Università & Istituzioni</h4>
+                    <p>Partner accademici che supportano ricerca, formazione e accesso a distretti industriali</p>
+                </div>
+                
+                <div class="ecosystem-item">
+                    <div class="eco-number">36+</div>
+                    <h4>Territori Globali</h4>
+                    <p>Connessione con distretti industriali e hub di innovazione in Europa e nel mondo</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="team-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Il Nostro Team</h2>
+                <p>Innovation professionals con esperienza internazionale nell'execution e nell'ingegneria dell'innovazione</p>
+            </div>
+            
+            <div class="team-grid"><!--GT todo far ruotare, icone, sfondi, testo, infinite loop, slideshow dei testimonials, foto ai mentors-->
+                <div class="team-card">
+                    <div class="team-avatar">
+                        <img class="avatar-placeholder" src="assets/img/PaoloLicata.png">
+                    </div>
+                    <div class="team-info">
+                        <h3>Paolo Licata</h3>
+                        <span class="role">Founder & Managing Director</span>
+                        <p>Innovation professional and technical author. UN New York panelist. Recognized across Europe for community, ecosystem building and open innovation.</p>
+                        <a href="https://www.linkedin.com/in/paololicata/" target="_blank" class="linkedin-link">
+                            <svg viewBox="0 0 24 24" fill="none"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="team-card">
+                    <div class="team-avatar">
+                        <div class="avatar-placeholder">GR</div>
+                    </div>
+                    <div class="team-info">
+                        <h3>Giulia Raffaeli</h3>
+                        <span class="role">Junior Venture Builder</span>
+                        <p>MSc Chemistry, Master in Business Development (Spain). Venture building for startups and schools.</p>
+                    </div>
+                </div>
+
+                <div class="team-card">
+                    <div class="team-avatar">
+                        <div class="avatar-placeholder">GT</div>
+                    </div>
+                    <div class="team-info">
+                        <h3>Giovanni Turri</h3>
+                        <span class="role">Ecosystem & Open Innovation Lead</span>
+                        <p>Electronics engineer, university lecturer/research fellow; roles at VeniSia, OGR Tech, ReAction.</p>
+                    </div>
+                </div>
+
+                <div class="team-card">
+                    <div class="team-avatar">
+                        <div class="avatar-placeholder">EM</div>
+                    </div>
+                    <div class="team-info">
+                        <h3>Edoardo Marcis</h3>
+                        <span class="role">Senior Venture Architect</span>
+                        <p>6+ years across Seedble & Invitalia in acceleration, startup development and public-sector open innovation.</p>
+                        <a href="https://www.linkedin.com/in/edoardomarcis/" target="_blank" class="linkedin-link">
+                            <svg viewBox="0 0 24 24" fill="none"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="team-card">
+                    <div class="team-avatar">
+                        <div class="avatar-placeholder">CG</div>
+                    </div>
+                    <div class="team-info">
+                        <h3>Carlo Giuliano</h3>
+                        <span class="role">Legal & Innovation Advisor</span>
+                        <p>Startup & IP lawyer; founder of Pixlex; contracts, IP, and compliance.</p>
+                        <a href="https://www.linkedin.com/in/carlo-giuliano-7b366a134/" target="_blank" class="linkedin-link">
+                            <svg viewBox="0 0 24 24" fill="none"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="team-card">
+                    <div class="team-avatar">
+                        <div class="avatar-placeholder">PD</div>
+                    </div>
+                    <div class="team-info">
+                        <h3>Paola D'Incecco</h3>
+                        <span class="role">Innovation Ambassador</span>
+                        <p>Innovation manager/business developer in emerging tech and cross-sector collaborations.</p>
+                    </div>
+                </div>
+
+                <div class="team-card">
+                    <div class="team-avatar">
+                        <div class="avatar-placeholder">LM</div>
+                    </div>
+                    <div class="team-info">
+                        <h3>Louise Maunoir</h3>
+                        <span class="role">International Officer & Community Builder</span>
+                        <p>3x Founder. International relations expert with extensive experience in European ecosystem development. Drives international expansion and strategic alliances.</p>
+                    </div>
+                </div>
+
+                <div class="team-card">
+                    <div class="team-avatar">
+                        <div class="avatar-placeholder">DR</div>
+                    </div>
+                    <div class="team-info">
+                        <h3>Davide Rapida</h3>
+                        <span class="role">Acceleration & Innovation Specialist</span>
+                        <p>Innovation acceleration expert with proven track record in startup development and corporate innovation programs. Leads execution-focused initiatives.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="scientific-board">
+        <div class="container">
+            <div class="section-title">
+                <h2>Scientific Board</h2>
+                <p>Esperti e founder di spicco che guidano l'innovazione tecnologica e strategica del nostro ecosistema</p>
+            </div>
+        </div>
+        
+        <div class="board-slider">
+            <div class="board-track">
+                <div class="board-card">
+                    <div class="board-avatar">
+                        <div class="avatar-placeholder">AL</div>
+                    </div>
+                    <div class="board-info">
+                        <h3>Alessia Lucentini</h3>
+                        <span class="role">CEO & Co-founder LiT</span>
+                        <div class="expertise">
+                            <span class="tag">Corporate Finance</span>
+                            <span class="tag">ESG Strategy</span>
+                            <span class="tag">Climate Tech</span>
+                        </div>
+                        <p>Scale-up Founder & PhD in Finance. ESG specialist focusing on sustainable finance, corporate disclosure, and impact measurement.</p>
+                        <a href="https://www.linkedin.com/in/alessia-lucentini-152023222/" target="_blank" class="linkedin-link">
+                            <svg viewBox="0 0 24 24" fill="none"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="board-card">
+                    <div class="board-avatar">
+                        <div class="avatar-placeholder">AM</div>
+                    </div>
+                    <div class="board-info">
+                        <h3>Antonio Marotta</h3>
+                        <span class="role">Co-founder Quinck</span>
+                        <div class="expertise">
+                            <span class="tag">Venture Building</span>
+                            <span class="tag">Product Design</span>
+                            <span class="tag">Edge Computing</span>
+                        </div>
+                        <p>Venture Builder & Software Factory Founder; Master in Psychology. Human-centered product development and digital innovation.</p>
+                    </div>
+                </div>
+
+                <div class="board-card">
+                    <div class="board-avatar">
+                        <div class="avatar-placeholder">DT</div>
+                    </div>
+                    <div class="board-info">
+                        <h3>Denis Tavaris, PhD</h3>
+                        <span class="role">Research Officer & AI ML PhD</span>
+                        <div class="expertise">
+                            <span class="tag">Advanced AI/ML</span>
+                            <span class="tag">Computer Vision</span>
+                            <span class="tag">AR/VR</span>
+                        </div>
+                        <p>ML researcher & PhD candidate at University of Udine. Computer Vision, autonomous systems, and AI training for STEM education.</p>
+                        <a href="https://www.linkedin.com/in/denistavaris/" target="_blank" class="linkedin-link">
+                            <svg viewBox="0 0 24 24" fill="none"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="board-card">
+                    <div class="board-avatar">
+                        <div class="avatar-placeholder">AS</div>
+                    </div>
+                    <div class="board-info">
+                        <h3>Andrea Stefanelli</h3>
+                        <span class="role">Digital Strategy Officer</span>
+                        <div class="expertise">
+                            <span class="tag">Growth Hacking</span>
+                            <span class="tag">Digital Marketing</span>
+                            <span class="tag">Go-To-Market</span>
+                        </div>
+                        <p>CEO Rocket Group SRL. Digital marketing, social media strategy, and growth optimization for brands and scale-ups.</p>
+                        <a href="https://www.linkedin.com/in/andrea-stefanelli-5796a71aa/" target="_blank" class="linkedin-link">
+                            <svg viewBox="0 0 24 24" fill="none"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="board-card">
+                    <div class="board-avatar">
+                        <div class="avatar-placeholder">SG</div>
+                    </div>
+                    <div class="board-info">
+                        <h3>Simone Grasso</h3>
+                        <span class="role">Circular Economy Officer</span>
+                        <div class="expertise">
+                            <span class="tag">Circular Economy</span>
+                            <span class="tag">Life Cycle Assessment</span>
+                            <span class="tag">ESG KPIs</span>
+                        </div>
+                        <p>Ex Country Manager Cyrkl. ESG specialist in circular economy, LCA methodology, and sustainability impact measurement.</p>
+                    </div>
+                </div>
+
+                <div class="board-card">
+                    <div class="board-avatar">
+                        <div class="avatar-placeholder">DC</div>
+                    </div>
+                    <div class="board-info">
+                        <h3>Davide Cifarelli</h3>
+                        <span class="role">AI & ML Researcher</span>
+                        <div class="expertise">
+                            <span class="tag">Generative AI</span>
+                            <span class="tag">Synthetic Data</span>
+                            <span class="tag">R&D Acceleration</span>
+                        </div>
+                        <p>Founder Clara Labs; ex-Founder Safurai. Generative AI specialist in synthetic data, custom models, and R&D acceleration.</p>
+                    </div>
+                </div>
+
+                <div class="board-card">
+                    <div class="board-avatar">
+                        <div class="avatar-placeholder">SZ</div>
+                    </div>
+                    <div class="board-info">
+                        <h3>Simone Zoppello</h3>
+                        <span class="role">CTO/CPO Joule & Tech R&D Officer</span>
+                        <div class="expertise">
+                            <span class="tag">Enterprise AI</span>
+                            <span class="tag">Cybersecurity</span>
+                            <span class="tag">Blockchain</span>
+                        </div>
+                        <p>CTO & AI strategist. Cybersecurity expert and emerging technology trainer focusing on AI applications and technical strategy.</p>
+                    </div>
+                </div>
+
+                <div class="board-card">
+                    <div class="board-avatar">
+                        <div class="avatar-placeholder">GZ</div>
+                    </div>
+                    <div class="board-info">
+                        <h3>Giorgio Zampirolo</h3>
+                        <span class="role">Intelligence & Strategy Officer</span>
+                        <div class="expertise">
+                            <span class="tag">Decision Intelligence</span>
+                            <span class="tag">AI Simulations</span>
+                            <span class="tag">Strategic Innovation</span>
+                        </div>
+                        <p>Decision intelligence specialist combining economics, education, and AI-driven simulations for strategic innovation.</p>
+                    </div>
+                </div>
+
+                <div class="board-card">
+                    <div class="board-avatar">
+                        <div class="avatar-placeholder">DA</div>
+                    </div>
+                    <div class="board-info">
+                        <h3>Denni Albiani</h3>
+                        <span class="role">DevOps Engineer & Cybersecurity Expert</span>
+                        <div class="expertise">
+                            <span class="tag">Industry 4.0</span>
+                            <span class="tag">Digital Twin</span>
+                            <span class="tag">Industrial IoT</span>
+                        </div>
+                        <p>Senior DevOps Engineer & Industry 4.0 specialist. IoT, blockchain, and digital twin technologies for industrial automation.</p>
+                    </div>
+                </div>
+
+                <div class="board-card">
+                    <div class="board-avatar">
+                        <div class="avatar-placeholder">AL</div>
+                    </div>
+                    <div class="board-info">
+                        <h3>Alessia Lucentini</h3>
+                        <span class="role">CEO & Co-founder LiT</span>
+                        <div class="expertise">
+                            <span class="tag">Corporate Finance</span>
+                            <span class="tag">ESG Strategy</span>
+                            <span class="tag">Climate Tech</span>
+                        </div>
+                        <p>Scale-up Founder & PhD in Finance. ESG specialist focusing on sustainable finance, corporate disclosure, and impact measurement.</p>
+                    </div>
+                </div>
+
+                <div class="board-card">
+                    <div class="board-avatar">
+                        <div class="avatar-placeholder">AM</div>
+                    </div>
+                    <div class="board-info">
+                        <h3>Antonio Marotta</h3>
+                        <span class="role">Co-founder Quinck</span>
+                        <div class="expertise">
+                            <span class="tag">Venture Building</span>
+                            <span class="tag">Product Design</span>
+                            <span class="tag">Edge Computing</span>
+                        </div>
+                        <p>Venture Builder & Software Factory Founder; Master in Psychology. Human-centered product development and digital innovation.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="osservatorio-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Le ultime dal nostro Osservatorio</h2>
+                <p>Il nostro Osservatorio è il cuore pulsante della ricerca di Clover Venture, un hub dove la nostra expertise si traduce in analisi approfondite e insight strategici per l'innovazione europea.</p>
+            </div>
+            
+            <div class="insights-grid">
+                <article class="insight-card">
+                    <div class="insight-image">
+                        <div class="image-placeholder">
+                            <svg viewBox="0 0 24 24" fill="none">
+                                <path d="M3 21h18"/>
+                                <path d="M5 21V7l8-4v18"/>
+                                <path d="M19 21V11l-6-4"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="insight-content">
+                        <h3>Il Futuro dei Distretti Industriali Italiani</h3>
+                        <p>Un'analisi approfondita su come l'applicazione di metodologie di Open Innovation e l'integrazione di tecnologie emergenti possano rafforzare il vantaggio competitivo dei distretti industriali italiani nel contesto globale.</p>
+                        <span class="read-more">Leggi l'analisi completa →</span>
+                    </div>
+                </article>
+
+                <article class="insight-card">
+                    <div class="insight-image">
+                        <div class="image-placeholder">
+                            <svg viewBox="0 0 24 24" fill="none">
+                                <path d="M3 3v18h18"/>
+                                <path d="M18.7 8l-5.1 5.2-2.8-2.7L7 14.3"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="insight-content">
+                        <h3>Corporate Venture Building: Metriche di Successo</h3>
+                        <p>Approfondimento sui 5 KPI essenziali per misurare l'efficacia dei programmi di innovazione corporate, con focus sull'impatto misurabile e il ROI basato sulla nostra esperienza diretta.</p>
+                        <span class="read-more">Scopri i KPI fondamentali →</span>
+                    </div>
+                </article>
+
+                <article class="insight-card">
+                    <div class="insight-image">
+                        <div class="image-placeholder">
+                            <svg viewBox="0 0 24 24" fill="none">
+                                <circle cx="12" cy="12" r="3"/>
+                                <path d="m12 1 3 6 6 3-6 3-3 6-3-6-6-3 6-3 3-6z"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="insight-content">
+                        <h3>Tecnologie Emergenti: Impatto sul Made in Italy</h3>
+                        <p>Esplorazione delle tecnologie che stanno trasformando i settori tradizionali italiani e di come la loro adozione possa essere strategica per la valorizzazione della proprietà intellettuale.</p>
+                        <span class="read-more">Esplora le strategie IP →</span>
+                    </div>
+                </article>
+            </div>
+
+            <div class="osservatorio-cta">
+                <a href="#" class="cta-button">Esplora Tutti gli Insight Strategici</a>
+                <a href="#" class="btn-secondary">Partecipa ai Prossimi Eventi</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials-section"><!-- Metterlo con animazione e box grande che lo faccia vedere bene-->
+        <div class="container">
+            <div class="section-title">
+                <h2>Combiniamo Execution, Know-how e Community</h2>
+                <p>La voce dei nostri partner racconta l'impatto reale del nostro approccio all'innovazione</p>
+            </div>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-avatar">
+                        <div class="avatar-placeholder">LB</div>
+                    </div>
+                    <div class="testimonial-content">
+                        <div class="stars">★★★★★</div>
+                        <blockquote>"Paolo is a person capable of transmitting energy, vision and trust. His energy is overwhelming, his human and concrete approach makes you immediately feel in the right place. The projects with Clover Venture are truly unique: stimulating, concrete, and with a real impact."</blockquote>
+                        <cite>
+                            <strong>Laura Busuoic</strong>
+                            <span>Young talent and startup founder</span>
+                        </cite>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-avatar">
+                        <div class="avatar-placeholder">GT</div>
+                    </div>
+                    <div class="testimonial-content">
+                        <div class="stars">★★★★★</div>
+                        <blockquote>"Imprenditori #GenNext wasn't just a hackathon — it was an exceptional experience for networking, personal growth, and gaining hands-on insight into how collaboration can solve real-world challenges."</blockquote>
+                        <cite>
+                            <strong>Gabriele Tealdo</strong>
+                            <span>Young talent and startup founder</span>
+                        </cite>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-avatar">
+                        <div class="avatar-placeholder">RC</div>
+                    </div>
+                    <div class="testimonial-content">
+                        <div class="stars">★★★★★</div>
+                        <blockquote>"With Clover Venture we built a concrete initiative involving 8 Universities, hundreds of students and over 30 companies. Projects were born that today companies want to develop. All thanks to their prepared and tireless team."</blockquote>
+                        <cite>
+                            <strong>Renzo Chervatin</strong>
+                            <span>Founder and Territorial Development Manager UniCredit</span>
+                        </cite>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-avatar">
+                        <div class="avatar-placeholder">AS</div>
+                    </div>
+                    <div class="testimonial-content">
+                        <div class="stars">★★★★★</div>
+                        <blockquote>"With Clover Venture we made a real leap in quality. In a few months we went from startup to business: we accelerated processes, structured the company, worked on subsidized finance. They worked with us as temporary co-founders."</blockquote>
+                        <cite>
+                            <strong>Andrea Stefanelli</strong>
+                            <span>Rocket Group SRL & Orbit co-founder</span>
+                        </cite>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-avatar">
+                        <div class="avatar-placeholder">AM</div>
+                    </div>
+                    <div class="testimonial-content">
+                        <div class="stars">★★★★★</div>
+                        <blockquote>"Clover Venture is a leading company in the innovation and startup ecosystem. I believe that Paolo is the person I know with the most genuine passion for work and relationships."</blockquote>
+                        <cite>
+                            <strong>Antonio Marotta</strong>
+                            <span>Software Factory & Venture Builder Co-founder</span>
+                        </cite>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-avatar">
+                        <div class="avatar-placeholder">CM</div>
+                    </div>
+                    <div class="testimonial-content">
+                        <div class="stars">★★★★★</div>
+                        <blockquote>"Clover Venture combines innovation, entrepreneurship and consultancy with strategy, competence, vision and the right dose of emotions. It's impossible not to contact them!"</blockquote>
+                        <cite>
+                            <strong>Cosimo Giovanni de Musso</strong>
+                            <span>Senior Product Manager Infocamere</span>
+                        </cite>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-content">
+                <div class="contact-text">
+                    <h2>L'Innovazione è Ora. Costruiamola Insieme.</h2>
+                    <p>Ogni grande progetto di execution inizia con una conversazione chiara e mirata. Che tu sia una startup NextGen ambiziosa, una corporate che mira all'innovazione aperta e a un ROI misurabile, o una PMI che vuole accelerare la propria trasformazione digitale, siamo qui per ascoltarti.</p>
+                    <p>Contattaci per una prima conversazione strategica senza impegno. Siamo i partner operativi che trasformano le sfide in impatto quantificabile.</p>
+                </div>
+                
+                <form class="contact-form" onsubmit="handleContactForm(event)">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="fullName">Nome Completo</label>
+                            <input type="text" id="fullName" name="fullName" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Aziendale</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="role">Ruolo in Azienda</label>
+                            <input type="text" id="role" name="role" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="company">Nome Azienda</label>
+                            <input type="text" id="company" name="company" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group full-width">
+                        <label for="message">Messaggio</label>
+                        <textarea id="message" name="message" rows="4" placeholder="Scrivi qui la tua sfida o il tuo obiettivo" required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="cta-button">Invia la Tua Richiesta Strategica</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section id="ecosistema" class="nav-section">
+        <div class="container">
+            <div class="page-header">
+                <h1>Ecosistema Clover Venture</h1>
+                <p>Il tuo accesso privilegiato al network europeo dell'innovazione. Connessioni strategiche, opportunità concrete, crescita misurabile.</p>
+            </div>
+
+            <div class="subsection">
+                <h2>Come Accedere al Network</h2>
+                <div class="access-steps">
+                    <div class="step-card">
+                        <div class="step-number">01</div>
+                        <h3>Application & Screening</h3>
+                        <p>Candidatura online con pitch deck e business model. Il nostro team valuta fit strategico, potenziale di crescita e allineamento con l'ecosistema europeo.</p>
+                        <div class="step-details">
+                            <span>• Pitch deck (10-15 slide)</span>
+                            <span>• Business model canvas</span>
+                            <span>• Traction & metrics</span>
+                            <span>• Team background</span>
+                        </div>
+                    </div>
+                    
+                    <div class="step-card">
+                        <div class="step-number">02</div>
+                        <h3>Assessment & Interview</h3>
+                        <p>Colloquio approfondito con i nostri partner per valutare execution capability, market readiness e potential di collaborazione nell'ecosistema.</p>
+                        <div class="step-details">
+                            <span>• 60 min deep-dive interview</span>
+                            <span>• Technical due diligence</span>
+                            <span>• Market fit analysis</span>
+                            <span>• Growth potential assessment</span>
+                        </div>
+                    </div>
+                    
+                    <div class="step-card">
+                        <div class="step-number">03</div>
+                        <h3>Onboarding & Integration</h3>
+                        <p>Welcome program personalizzato con matching strategico, accesso alle piattaforme proprietarie e piano di crescita nell'ecosistema.</p>
+                        <div class="step-details">
+                            <span>• Strategic matching con corporate</span>
+                            <span>• Access alle partnership</span>
+                            <span>• Integration nei progetti</span>
+                            <span>• Ongoing mentorship</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="access-cta">
+                    <h3>Pronto per il Prossimo Step?</h3>
+                    <p>Oltre il 75% delle startup selezionate avvia collaborazioni concrete entro i primi 6 mesi.</p>
+                    <a href="/contact" class="cta-button">Inizia la Tua Application</a>
+                </div>
+            </div>
+
+            <!-- Partnership -->
+            <div class="subsection">
+                <h2>Partnership Strategiche</h2>
+                <div class="partnership-grid">
+                    <div class="partner-category">
+                        <div class="category-header">
+                            <div class="category-icon">
+                                <svg viewBox="0 0 24 24" fill="none">
+                                    <path d="M3 21h18"/>
+                                    <path d="M5 21V7l8-4v18"/>
+                                    <path d="M19 21V11l-6-4"/>
+                                </svg>
+                            </div>
+                            <h3>Corporate Partners</h3>
+                        </div>
+                        <p>Aziende leader che co-sviluppano soluzioni innovative e definiscono challenge reali per l'ecosistema.</p>
+                        <div class="partner-benefits">
+                            <div class="benefit-item">
+                                <strong>Open Innovation Programs</strong>
+                                <span>Accesso diretto a programmi di innovazione aperta con budget dedicato</span>
+                            </div>
+                            <div class="benefit-item">
+                                <strong>Pilot Opportunities</strong>
+                                <span>Testing e validation in ambiente corporate con possibilità di scale</span>
+                            </div>
+                            <div class="benefit-item">
+                                <strong>Strategic Mentorship</strong>
+                                <span>Guidance da C-level executives e industry experts</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="partner-category">
+                        <div class="category-header">
+                            <div class="category-icon">
+                                <svg viewBox="0 0 24 24" fill="none">
+                                    <circle cx="12" cy="12" r="10"/>
+                                    <path d="M12 6v12"/>
+                                    <path d="M6 12h12"/>
+                                </svg>
+                            </div>
+                            <h3>Investment Network</h3>
+                        </div>
+                        <p>Fondi di VC, Business Angels e Corporate Venture Capital con focus strategico sull'innovazione europea.</p>
+                        <div class="partner-benefits">
+                            <div class="benefit-item">
+                                <strong>110+ Selected Investors</strong>
+                                <span>Network curato di investitori attivi nell'ecosistema europeo</span>
+                            </div>
+                            <div class="benefit-item">
+                                <strong>Smart Capital</strong>
+                                <span>Investimenti con strong industrial logic e strategic value-add</span>
+                            </div>
+                            <div class="benefit-item">
+                                <strong>Cross-border Access</strong>
+                                <span>Connessioni con fondi pan-europei per scaling internazionale</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="partner-category">
+                        <div class="category-header">
+                            <div class="category-icon">
+                                <svg viewBox="0 0 24 24" fill="none">
+                                    <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                                    <line x1="8" y1="21" x2="16" y2="21"/>
+                                    <line x1="12" y1="17" x2="12" y2="21"/>
+                                </svg>
+                            </div>
+                            <h3>Academic & Institutions</h3>
+                        </div>
+                        <p>Università di eccellenza e istituzioni che supportano ricerca, talent development e access ai distretti industriali.</p>
+                        <div class="partner-benefits">
+                            <div class="benefit-item">
+                                <strong>Research Collaboration</strong>
+                                <span>Joint projects con università per R&D avanzata e IP development</span>
+                            </div>
+                            <div class="benefit-item">
+                                <strong>Talent Pipeline</strong>
+                                <span>Accesso a 1500+ talenti formati e programmi di recruitment</span>
+                            </div>
+                            <div class="benefit-item">
+                                <strong>Industrial Districts</strong>
+                                <span>Connessioni con cluster industriali europei e global markets</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Eventi -->
+            <div class="subsection">
+                <h2>Eventi & Networking</h2>
+                <div class="events-section">
+                    <div class="event-highlight">
+                        <div class="event-badge">SIGNATURE EVENT</div>
+                        <h3>Hackathon NextGen</h3>
+                        <p>L'evento di innovazione più grande d'Italia. 3 regioni, 15 PMI, 8 università, 210+ talenti NextGen per sviluppare soluzioni concrete su sfide critiche.</p>
+                        <div class="event-stats">
+                            <div class="event-stat">
+                                <span class="stat-number">75%</span>
+                                <span class="stat-label">Success Rate</span>
+                            </div>
+                            <div class="event-stat">
+                                <span class="stat-number">50+</span>
+                                <span class="stat-label">Soluzioni Sviluppate</span>
+                            </div>
+                            <div class="event-stat">
+                                <span class="stat-number">+2M</span>
+                                <span class="stat-label">Reach Mediatico</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="events-grid">
+                        <div class="event-card">
+                            <h4>Innovation Breakfast</h4>
+                            <div class="event-frequency">Mensile</div>
+                            <p>Networking esclusivo con founder, corporate innovators e investitori. Focus su trend emergenti e case study concreti.</p>
+                        </div>
+                        
+                        <div class="event-card">
+                            <h4>Workshop Tematici</h4>
+                            <div class="event-frequency">Bimestrale</div>
+                            <p>Deep dive su AI, Robotica, IoT, ESG con esperti del settore. Hands-on training su metodologie proprietarie.</p>
+                        </div>
+                        
+                        <div class="event-card">
+                            <h4>Corporate Connect</h4>
+                            <div class="event-frequency">Trimestrale</div>
+                            <p>Pitch sessions esclusive con decision maker corporate per partnership strategiche e progetti pilota.</p>
+                        </div>
+                        
+                        <div class="event-card">
+                            <h4>Investor Day</h4>
+                            <div class="event-frequency">Semestrale</div>
+                            <p>Demo day con 110+ investitori selezionati del network per round di crescita e scaling internazionale.</p>
+                        </div>
+                        
+                        <div class="event-card">
+                            <h4>European Tour</h4>
+                            <div class="event-frequency">Annuale</div>
+                            <p>Roadshow europeo in 5+ hub di innovazione per expansion, partnership e market entry support.</p>
+                        </div>
+                        
+                        <div class="event-card">
+                            <h4>Summit Annuale</h4>
+                            <div class="event-frequency">Annuale</div>
+                            <p>Conferenza flagship con 500+ partecipanti, keynote internazionali e lancio nuove iniziative strategiche.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="events-cta">
+                    <h3>Non Perdere le Opportunità</h3>
+                    <p>Accesso prioritario a tutti gli eventi dell'ecosistema e network di 36+ paesi.</p>
+                    <a href="/contact" class="cta-button">Prenota il Tuo Posto</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
     <footer>
         <div class="container">
-            <p>&copy; 2025 Clover Venture SRL — Via Filippo Turati 29, Milano (MI) — P.IVA 14050490961 — PEC: cloverventure@legalmail.it</p>
-            <div class="footer-links">
-                <a href="#">Privacy Policy</a>
-                <a href="#">Cookie Policy</a>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Clover Venture</h3>
+                    <p>European Innovation Hub</p>
+                    <p>Connecting innovation across Europe</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Ecosistema</h3>
+                    <a href="/ecosistema">Come Accedere</a>
+                    <a href="/ecosistema">Partnership</a>
+                    <a href="/ecosistema">Eventi</a>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Servizi</h3>
+                    <a href="/servizi">Per Corporate</a>
+                    <a href="/servizi">Per PMI</a>
+                    <a href="/servizi">Per Startup</a>
+                    <a href="/servizi">Osservatorio</a>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Chi Siamo</h3>
+                    <a href="/chi-siamo">Visione</a>
+                    <a href="/chi-siamo">Team</a>
+                    <a href="/chi-siamo">Casi Studio</a>
+                    <a href="/chi-siamo">Contatti</a>
+                </div>
             </div>
-            <div class="social-links">
-                <a href="#"></a>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Clover Venture. European Innovation Hub.</p>
             </div>
         </div>
     </footer>
 
-    <script src="assets/js/app.js"></script>
+    <script>
+        // Navigation functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // Load logo image
+            async function loadLogo() {
+                try {
+                    // Try to load the uploaded PNG logo
+                    const possibleNames = ['LogoClover.png', 'clover-venture-logo.png', 'clover.png', 'Logo.png'];
+                    let logoLoaded = false;
+                    
+                    for (const filename of possibleNames) {
+                        try {
+                            const logoFile = await window.fs.readFile(filename);
+                            const blob = new Blob([logoFile], { type: 'image/png' });
+                            const logoUrl = URL.createObjectURL(blob);
+                            document.querySelector('.logo-icon').style.backgroundImage = `url(${logoUrl})`;
+                            logoLoaded = true;
+                            console.log('Logo loaded from:', filename);
+                            break;
+                        } catch (e) {
+                            continue;
+                        }
+                    }
+                    
+                    if (!logoLoaded) {
+                        console.log('PNG logo not found, using fallback');
+                        // Keep current fallback SVG
+                        document.querySelector('.logo-icon').innerHTML = `
+                            <svg width="32" height="32" viewBox="0 0 200 200" fill="none">
+                                <path d="M30 30 C30 10, 50 10, 70 30 C90 50, 70 70, 50 70 C30 50, 30 30, 30 30 Z" fill="#0891A8"/>
+                                <path d="M90 30 C110 10, 130 10, 130 30 C130 50, 110 70, 90 70 C70 50, 90 30, 90 30 Z" fill="#00BDA8"/>
+                                <path d="M60 90 C40 70, 60 50, 80 70 C100 90, 80 110, 60 110 C40 90, 60 90, 60 90 Z" fill="#00D4C4"/>
+                            </svg>
+                        `;
+                    }
+                } catch (error) {
+                    console.log('Error loading logo:', error);
+                }
+            }
+
+            loadLogo();
+
+            const navLinks = document.querySelectorAll('.nav-link');
+            const sections = document.querySelectorAll('.nav-section');
+            const heroSection = document.querySelector('.hero');
+            const mobileToggle = document.getElementById('mobile-toggle');
+            const nav = document.getElementById('nav');
+
+            // Mobile menu toggle
+            mobileToggle.addEventListener('click', function() {
+                nav.classList.toggle('active');
+            });
+
+            // Navigation functionality
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+                    
+                    // Hide all sections
+                    sections.forEach(section => {
+                        section.classList.remove('active');
+                    });
+                    
+                    if (targetId === 'home') {
+                        // Show hero section and all homepage sections in CORRECT order
+                        heroSection.style.display = 'flex';
+                        document.querySelector('.partner-logos').style.display = 'block';
+                        document.querySelector('.stats').style.display = 'block';
+                        document.querySelector('.petal-cards').style.display = 'block';
+                        document.querySelector('.ticker-section').style.display = 'block';
+                        document.querySelector('.methodology-pillars').style.display = 'block';
+                        document.querySelector('.nextgen-hackathon').style.display = 'block';
+                        document.querySelector('.ecosystem-section').style.display = 'block';
+                        document.querySelector('.team-section').style.display = 'block';
+                        document.querySelector('.scientific-board').style.display = 'block';
+                        document.querySelector('.osservatorio-section').style.display = 'block';
+                        document.querySelector('.testimonials-section').style.display = 'block';
+                        document.querySelector('.contact-section').style.display = 'block';
+                    } else {
+                        // Hide hero and all homepage sections, show target section
+                        heroSection.style.display = 'none';
+                        document.querySelector('.partner-logos').style.display = 'none';
+                        document.querySelector('.stats').style.display = 'none';
+                        document.querySelector('.petal-cards').style.display = 'none';
+                        document.querySelector('.ticker-section').style.display = 'none';
+                        document.querySelector('.methodology-pillars').style.display = 'none';
+                        document.querySelector('.nextgen-hackathon').style.display = 'none';
+                        document.querySelector('.ecosystem-section').style.display = 'none';
+                        document.querySelector('.team-section').style.display = 'none';
+                        document.querySelector('.scientific-board').style.display = 'none';
+                        document.querySelector('.osservatorio-section').style.display = 'none';
+                        document.querySelector('.testimonials-section').style.display = 'none';
+                        document.querySelector('.contact-section').style.display = 'none';
+                        
+                        const targetSection = document.getElementById(targetId);
+                        if (targetSection) {
+                            targetSection.classList.add('active');
+                        }
+                    }
+
+                    // Update active nav link
+                    navLinks.forEach(nl => nl.classList.remove('active'));
+                    this.classList.add('active');
+
+                    // Close mobile menu
+                    nav.classList.remove('active');
+
+                    // Scroll to top
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                });
+            });
+
+            // Smooth scrolling for all internal links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    if (this.classList.contains('nav-link')) return; // Already handled above
+                    
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetElement = document.getElementById(targetId);
+                    
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+
+            // Intersection Observer for animations
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('fade-in-up');
+                    }
+                });
+            }, observerOptions);
+
+            // Observe elements for animation
+            document.querySelectorAll('.petal-card, .stat-item, .service-card').forEach(el => {
+                observer.observe(el);
+            });
+
+            // Header scroll effect
+            let lastScrollTop = 0;
+            window.addEventListener('scroll', function() {
+                let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                const header = document.querySelector('header');
+                
+                if (scrollTop > lastScrollTop && scrollTop > 100) {
+                    // Scrolling down
+                    header.style.transform = 'translateY(-100%)';
+                } else {
+                    // Scrolling up
+                    header.style.transform = 'translateY(0)';
+                }
+                
+                lastScrollTop = scrollTop;
+            });
+
+            // Dynamic counter animation
+            function animateCounters() {
+                const counters = document.querySelectorAll('.stat-number');
+                counters.forEach(counter => {
+                    const target = counter.textContent;
+                    const numericValue = parseInt(target.replace(/[^0-9]/g, ''));
+                    const suffix = target.replace(/[0-9]/g, '');
+                    
+                    let current = 0;
+                    const increment = numericValue / 50;
+                    const timer = setInterval(() => {
+                        current += increment;
+                        if (current >= numericValue) {
+                            current = numericValue;
+                            clearInterval(timer);
+                        }
+                        counter.textContent = Math.floor(current) + suffix;
+                    }, 30);
+                });
+            }
+
+            // Trigger counter animation when stats section is visible
+            const statsObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        animateCounters();
+                        statsObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            const statsSection = document.querySelector('.stats');
+            if (statsSection) {
+                statsObserver.observe(statsSection);
+            }
+
+            // Parallax effect for hero
+            window.addEventListener('scroll', function() {
+                const scrolled = window.pageYOffset;
+                const hero = document.querySelector('.hero');
+                if (hero) {
+                    hero.style.transform = `translateY(${scrolled * 0.5}px)`;
+                }
+            });
+
+            // Interactive card tilt effect
+            document.querySelectorAll('.petal-card').forEach(card => {
+                card.addEventListener('mousemove', function(e) {
+                    const rect = this.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+                    
+                    const centerX = rect.width / 2;
+                    const centerY = rect.height / 2;
+                    
+                    const rotateX = (y - centerY) / 10;
+                    const rotateY = (centerX - x) / 10;
+                    
+                    this.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-8px)`;
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0px)';
+                });
+            });
+
+            // Smooth page transitions
+            function smoothTransition() {
+                document.body.style.opacity = '0';
+                setTimeout(() => {
+                    document.body.style.transition = 'opacity 0.3s ease';
+                    document.body.style.opacity = '1';
+                }, 100);
+            }
+
+            // Initialize page
+            smoothTransition();
+        });
+
+        // Contact form handling (if needed later)
+        function handleContactForm(event) {
+            event.preventDefault();
+            
+            const formData = new FormData(event.target);
+            const data = {
+                fullName: formData.get('fullName'),
+                email: formData.get('email'),
+                role: formData.get('role'),
+                company: formData.get('company'),
+                message: formData.get('message')
+            };
+            
+            // Create mailto link
+            const subject = `Richiesta Strategica da ${data.fullName} - ${data.company}`;
+            const body = `Nome: ${data.fullName}
+Email: ${data.email}
+Ruolo: ${data.role}
+Azienda: ${data.company}
+
+Messaggio:
+${data.message}`;
+            
+            const mailtoLink = `mailto:paolo@cloverventure.it?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            window.location.href = mailtoLink;
+            
+            // Show success message
+            const button = event.target.querySelector('button[type="submit"]');
+            const originalText = button.textContent;
+            button.textContent = 'Messaggio Inviato!';
+            button.style.background = 'var(--green, #28a745)';
+            
+            setTimeout(() => {
+                button.textContent = originalText;
+                button.style.background = 'var(--clover-teal)';
+                event.target.reset();
+            }, 3000);
+        }
+
+        // Dynamic content loading simulation
+        function loadDynamicContent() {
+            const elements = document.querySelectorAll('.content-loading');
+            elements.forEach((element, index) => {
+                setTimeout(() => {
+                    element.classList.add('content-loaded');
+                }, index * 200);
+            });
+        }
+
+        // Call on page load
+        window.addEventListener('load', loadDynamicContent);
+    </script>
 </body>
 </html>
