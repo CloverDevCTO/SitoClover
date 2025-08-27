@@ -435,13 +435,29 @@ footer .footer-links {
 }
 
 /* --- Mentors Preview --- */
-.mentors-preview { text-align: center; }
+.mentors-preview { text-align: center; overflow: hidden; }
 .mentors-preview h2 { margin-bottom: 40px; }
-.mentor-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 24px;
+.mentors-carousel {
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
     margin-bottom: 40px;
+}
+.mentors-carousel:hover .mentor-grid {
+    animation-play-state: paused;
+}
+.mentor-grid {
+    display: flex;
+    gap: 24px;
+    animation: scroll 30s linear infinite;
+}
+.mentor-grid .petal-card {
+    flex: 0 0 300px; /* Adjust width as needed */
+}
+
+@keyframes scroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-100%); }
 }
 
 /* --- Logo Wall --- */
