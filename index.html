@@ -14,6 +14,9 @@
     <meta name="twitter:site" content="@clover_venture">
     <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png">
     <link rel="stylesheet" href="assets/css/stile.css">
+    <link rel="stylesheet" href="assets/css/owlcarousel/owl.carousel.min.css">
+    <link rel="stylesheet" href="assets/css/owlcarousel/owl.theme.default.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -27,70 +30,8 @@
       ]
     }
     </script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-    // Hero Slideshow
-    const slides = document.querySelectorAll('.heroriginal-slideshow .slide');
-    let currentSlide = 0;
-    setInterval(() => {
-        slides[currentSlide].classList.remove('active');
-        currentSlide = (currentSlide + 1) % slides.length;
-        slides[currentSlide].classList.add('active');
-    }, 4000);
-
-    // Language Switcher
-    const langSwitcher = document.querySelector('.language-switcher');
-    if(langSwitcher) {
-        const userLang = navigator.language || navigator.userLanguage;
-        if (userLang.startsWith('it')) {
-            // Logic to switch to Italian
-        }
-    }
-
-    // Cookie Banner
-    const cookieBanner = document.createElement('div');
-    cookieBanner.innerHTML = `
-        <div class="cookie-banner">
-            <p>We use cookies to enhance your experience. By continuing to visit this site you agree to our use of cookies.</p>
-            <button class="btn btn-primary">Accept</button>
-        </div>
-    `;
-    document.body.appendChild(cookieBanner);
-    cookieBanner.querySelector('button').addEventListener('click', () => {
-        cookieBanner.style.display = 'none';
-    });
-
-    const tickerItems = document.querySelectorAll('.ticker-item');
-    let tickerIndex = 0;
-
-    setInterval(() => {
-        const currentItem = tickerItems[tickerIndex];
-        const nextItem = tickerItems[(tickerIndex + 1) % tickerItems.length];
-
-        // Elimina la classe 'active' dal primo item
-        currentItem.classList.remove('active');
-
-        // Aggiunge la classe 'active' al secondo item
-        nextItem.classList.add('active');
-
-        // Cambia l'indice per scorrere al prossimo item
-        tickerIndex = (tickerIndex + 1) % tickerItems.length;
-
-        currentItem.style.transform = 'translateX(-100%)';
-    }, 5000); // Scorrimento ogni 5 secondi
-
-    // Funzione per aggiungere la classe "active" all'ultimo item quando il loop finisce
-    function aggiungiClassaActive() {
-        if (tickerIndex === tickerItems.length - 1) {
-            const lastItem = tickerItems[tickerItems.length - 1];
-            lastItem.classList.add('active');
-        }
-    }
-
-    setInterval(aggungiClassaActive, 5000);
-    
-    });
-    </script>
+    <script src="assets/js/app.js"></script>
+    <script src="assets/js/owl.carousel.min.js"></script>
 </head>
 <body>
     <header>
@@ -103,7 +44,7 @@
                 <ul>
                     <li><a href="open-innovation.html">Innovation services</a><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" data-slot="icon" style="color: #00BDA8; display: inline-flex; align-items: center; vertical-align: middle;" focusable="false"><path fill-rule="evenodd" d="M12.53 16.28a.75.75 0 0 1-1.06 0l-7.5-7.5a.75.75 0 0 1 1.06-1.06L12 14.69l6.97-6.97a.75.75 0 1 1 1.06 1.06l-7.5 7.5Z" clip-rule="evenodd"></path></svg></li>
                     <li><a href="ecosystem.html">Ecosystem</a></li>
-                    <li><a href="team.html" class="nav-link">About Us</a><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" data-slot="icon" style="color: #00BDA8; display: inline-flex; align-items: center; vertical-align: middle;"><path fill-rule="evenodd" d="M12.53 16.28a.75.75 0 0 1-1.06 0l-7.5-7.5a.75.75 0 0 1 1.06-1.06L12 14.69l6.97-6.97a.75.75 0 1 1 1.06 1.06l-7.5 7.5Z" clip-rule="evenodd"></path></svg></li>
+                    <li><a href="servizi.html" class="nav-link">About Us</a><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" data-slot="icon" style="color: #00BDA8; display: inline-flex; align-items: center; vertical-align: middle;"><path fill-rule="evenodd" d="M12.53 16.28a.75.75 0 0 1-1.06 0l-7.5-7.5a.75.75 0 0 1 1.06-1.06L12 14.69l6.97-6.97a.75.75 0 1 1 1.06 1.06l-7.5 7.5Z" clip-rule="evenodd"></path></svg></li>
                     <!--li><a href="/ecosistema" class="nav-link">Ecosistema</a></li>
                     <li><a href="/servizi" class="nav-link">Servizi</a></li>
                     <li><a href="/chi-siamo" class="nav-link">Chi Siamo</a></li-->
@@ -807,49 +748,79 @@
                 <h2>Combiniamo Execution, Know-how e Community</h2>
                 <p>La voce dei nostri partner racconta l'impatto reale del nostro approccio all'innovazione</p>
             </div>
-            
-            <div class="testimonials-grid">
-                <div class="testimonial-card">
-                    <div class="testimonial-avatar">
-                        <div class="avatar-placeholder">LB</div>
-                    </div>
-                    <div class="testimonial-content">
-                        <div class="stars">★★★★★</div>
+
+    <div class="row">
+      <div class="col-sm-12">
+        <div id="customers-testimonials" class="owl-carousel">
+
+          <!-- TESTIMONIAL 1 -->
+          <div class="item">
+            <div class="shadow-effect">
+              <img class="img-circle" src="http://themes.audemedia.com/html/goodgrowth/images/testimonial3.jpg" alt="">
+              <div class="stars">★★★★★</div>
                         <blockquote>"Paolo is a person capable of transmitting energy, vision and trust. His energy is overwhelming, his human and concrete approach makes you immediately feel in the right place. The projects with Clover Venture are truly unique: stimulating, concrete, and with a real impact."</blockquote>
+                        <br>
                         <cite>
-                            <strong>Laura Busuoic</strong>
                             <span>Young talent and startup founder</span>
                         </cite>
-                    </div>
-                </div>
+            </div>
+            <div class="testimonial-name">Laura Busuoic</div>
+          </div>
 
-                <div class="testimonial-card">
-                    <div class="testimonial-avatar">
-                        <div class="avatar-placeholder">GT</div>
-                    </div>
-                    <div class="testimonial-content">
-                        <div class="stars">★★★★★</div>
+          <!-- TESTIMONIAL 2 -->
+          <div class="item">
+            <div class="shadow-effect">
+              <img class="img-circle" src="http://themes.audemedia.com/html/goodgrowth/images/testimonial3.jpg" alt="">
+              <div class="stars">★★★★★</div>
                         <blockquote>"Imprenditori #GenNext wasn't just a hackathon — it was an exceptional experience for networking, personal growth, and gaining hands-on insight into how collaboration can solve real-world challenges."</blockquote>
+                        <br>
                         <cite>
-                            <strong>Gabriele Tealdo</strong>
                             <span>Young talent and startup founder</span>
                         </cite>
-                    </div>
-                </div>
+            </div>
+            <div class="testimonial-name">Gabriele Tealdo</div>
+          </div>
 
-                <div class="testimonial-card">
-                    <div class="testimonial-avatar">
-                        <div class="avatar-placeholder">RC</div>
-                    </div>
-                    <div class="testimonial-content">
-                        <div class="stars">★★★★★</div>
+          <!-- TESTIMONIAL 3 -->
+          <div class="item">
+            <div class="shadow-effect">
+              <img class="img-circle" src="http://themes.audemedia.com/html/goodgrowth/images/testimonial3.jpg" alt="">
+              <div class="stars">★★★★★</div>
                         <blockquote>"With Clover Venture we built a concrete initiative involving 8 Universities, hundreds of students and over 30 companies. Projects were born that today companies want to develop. All thanks to their prepared and tireless team."</blockquote>
+                        <br>
                         <cite>
-                            <strong>Renzo Chervatin</strong>
                             <span>Founder and Territorial Development Manager UniCredit</span>
                         </cite>
-                    </div>
-                </div>
+            </div>
+            <div class="testimonial-name">Renzo Chervatin</div>
+          </div>
+
+          <!-- TESTIMONIAL 4 -->
+          <div class="item">
+            <div class="shadow-effect">
+              <img class="img-circle" src="http://themes.audemedia.com/html/goodgrowth/images/testimonial3.jpg" alt="">
+              <p>Dramatically maintain clicks-and-mortar solutions without functional solutions. Completely synergize resource taxing relationships via premier niche markets. Professionally cultivate.</p>
+            </div>
+            <div class="testimonial-name">IAN OWEN</div>
+          </div>
+
+          <!-- TESTIMONIAL 5 -->
+          <div class="item">
+            <div class="shadow-effect">
+              <img class="img-circle" src="http://themes.audemedia.com/html/goodgrowth/images/testimonial3.jpg" alt="">
+              <p>Dramatically maintain clicks-and-mortar solutions without functional solutions. Completely synergize resource taxing relationships via premier niche markets. Professionally cultivate.</p>
+            </div>
+            <div class="testimonial-name">MICHAEL TEDDY</div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+
+            
+            <div class="testimonials-grid">
+                
 
                 <div class="testimonial-card">
                     <div class="testimonial-avatar">
@@ -1195,303 +1166,5 @@
         </div>
     </footer>
 
-    <script>
-        // Navigation functionality
-        document.addEventListener('DOMContentLoaded', function() {
-            // Load logo image
-            /*async function loadLogo() {
-                try {
-                    // Try to load the uploaded PNG logo
-                    const possibleNames = ['LogoClover.png', 'clover-venture-logo.png', 'clover.png', 'Logo.png'];
-                    let logoLoaded = false;
-                    
-                    for (const filename of possibleNames) {
-                        try {
-                            const logoFile = await window.fs.readFile(filename);
-                            const blob = new Blob([logoFile], { type: 'image/png' });
-                            const logoUrl = URL.createObjectURL(blob);
-                            document.querySelector('.logo-icon').style.backgroundImage = `url(${logoUrl})`;
-                            logoLoaded = true;
-                            console.log('Logo loaded from:', filename);
-                            break;
-                        } catch (e) {
-                            continue;
-                        }
-                    }
-                    
-                    if (!logoLoaded) {
-                        console.log('PNG logo not found, using fallback');
-                        // Keep current fallback SVG
-                        document.querySelector('.logo-icon').innerHTML = `
-                            <svg width="32" height="32" viewBox="0 0 200 200" fill="none">
-                                <path d="M30 30 C30 10, 50 10, 70 30 C90 50, 70 70, 50 70 C30 50, 30 30, 30 30 Z" fill="#0891A8"/>
-                                <path d="M90 30 C110 10, 130 10, 130 30 C130 50, 110 70, 90 70 C70 50, 90 30, 90 30 Z" fill="#00BDA8"/>
-                                <path d="M60 90 C40 70, 60 50, 80 70 C100 90, 80 110, 60 110 C40 90, 60 90, 60 90 Z" fill="#00D4C4"/>
-                            </svg>
-                        `;
-                    }
-                } catch (error) {
-                    console.log('Error loading logo:', error);
-                }
-            }
-
-            loadLogo();*/
-
-            const navLinks = document.querySelectorAll('.nav-link');
-            const sections = document.querySelectorAll('.nav-section');
-            const heroSection = document.querySelector('.hero');
-            const mobileToggle = document.getElementById('mobile-toggle');
-            const nav = document.getElementById('nav');
-
-            // Mobile menu toggle
-            mobileToggle.addEventListener('click', function() {
-                nav.classList.toggle('active');
-            });
-
-            // Navigation functionality
-            navLinks.forEach(link => {
-                link.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const targetId = this.getAttribute('href').substring(1);
-                    
-                    // Hide all sections
-                    sections.forEach(section => {
-                        section.classList.remove('active');
-                    });
-                    
-                    if (targetId === 'home') {
-                        // Show hero section and all homepage sections in CORRECT order
-                        heroSection.style.display = 'flex';
-                        document.querySelector('.partner-logos').style.display = 'block';
-                        document.querySelector('.stats').style.display = 'block';
-                        document.querySelector('.petal-cards').style.display = 'block';
-                        document.querySelector('.ticker-section').style.display = 'block';
-                        document.querySelector('.methodology-pillars').style.display = 'block';
-                        document.querySelector('.nextgen-hackathon').style.display = 'block';
-                        document.querySelector('.ecosystem-section').style.display = 'block';
-                        document.querySelector('.team-section').style.display = 'block';
-                        document.querySelector('.scientific-board').style.display = 'block';
-                        document.querySelector('.osservatorio-section').style.display = 'block';
-                        document.querySelector('.testimonials-section').style.display = 'block';
-                        document.querySelector('.contact-section').style.display = 'block';
-                    } else {
-                        // Hide hero and all homepage sections, show target section
-                        heroSection.style.display = 'none';
-                        document.querySelector('.partner-logos').style.display = 'none';
-                        document.querySelector('.stats').style.display = 'none';
-                        document.querySelector('.petal-cards').style.display = 'none';
-                        document.querySelector('.ticker-section').style.display = 'none';
-                        document.querySelector('.methodology-pillars').style.display = 'none';
-                        document.querySelector('.nextgen-hackathon').style.display = 'none';
-                        document.querySelector('.ecosystem-section').style.display = 'none';
-                        document.querySelector('.team-section').style.display = 'none';
-                        document.querySelector('.scientific-board').style.display = 'none';
-                        document.querySelector('.osservatorio-section').style.display = 'none';
-                        document.querySelector('.testimonials-section').style.display = 'none';
-                        document.querySelector('.contact-section').style.display = 'none';
-                        
-                        const targetSection = document.getElementById(targetId);
-                        if (targetSection) {
-                            targetSection.classList.add('active');
-                        }
-                    }
-
-                    // Update active nav link
-                    navLinks.forEach(nl => nl.classList.remove('active'));
-                    this.classList.add('active');
-
-                    // Close mobile menu
-                    nav.classList.remove('active');
-
-                    // Scroll to top
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                });
-            });
-
-            // Smooth scrolling for all internal links
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function(e) {
-                    if (this.classList.contains('nav-link')) return; // Already handled above
-                    
-                    e.preventDefault();
-                    const targetId = this.getAttribute('href').substring(1);
-                    const targetElement = document.getElementById(targetId);
-                    
-                    if (targetElement) {
-                        targetElement.scrollIntoView({
-                            behavior: 'smooth',
-                            block: 'start'
-                        });
-                    }
-                });
-            });
-
-            // Intersection Observer for animations
-            const observerOptions = {
-                threshold: 0.1,
-                rootMargin: '0px 0px -50px 0px'
-            };
-
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('fade-in-up');
-                    }
-                });
-            }, observerOptions);
-
-            // Observe elements for animation
-            document.querySelectorAll('.petal-card, .stat-item, .service-card').forEach(el => {
-                observer.observe(el);
-            });
-
-            // Header scroll effect
-            let lastScrollTop = 0;
-            window.addEventListener('scroll', function() {
-                let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-                const header = document.querySelector('header');
-                
-                if (scrollTop > lastScrollTop && scrollTop > 100) {
-                    // Scrolling down
-                    header.style.transform = 'translateY(-100%)';
-                } else {
-                    // Scrolling up
-                    header.style.transform = 'translateY(0)';
-                }
-                
-                lastScrollTop = scrollTop;
-            });
-
-            // Dynamic counter animation
-            function animateCounters() {
-                const counters = document.querySelectorAll('.stat-number');
-                counters.forEach(counter => {
-                    const target = counter.textContent;
-                    const numericValue = parseInt(target.replace(/[^0-9]/g, ''));
-                    const suffix = target.replace(/[0-9]/g, '');
-                    
-                    let current = 0;
-                    const increment = numericValue / 50;
-                    const timer = setInterval(() => {
-                        current += increment;
-                        if (current >= numericValue) {
-                            current = numericValue;
-                            clearInterval(timer);
-                        }
-                        counter.textContent = Math.floor(current) + suffix;
-                    }, 30);
-                });
-            }
-
-            // Trigger counter animation when stats section is visible
-            const statsObserver = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        animateCounters();
-                        statsObserver.unobserve(entry.target);
-                    }
-                });
-            }, { threshold: 0.5 });
-
-            const statsSection = document.querySelector('.stats');
-            if (statsSection) {
-                statsObserver.observe(statsSection);
-            }
-
-            // Parallax effect for hero
-            window.addEventListener('scroll', function() {
-                const scrolled = window.pageYOffset;
-                const hero = document.querySelector('.hero');
-                if (hero) {
-                    hero.style.transform = `translateY(${scrolled * 0.5}px)`;
-                }
-            });
-
-            // Interactive card tilt effect
-            document.querySelectorAll('.petal-card').forEach(card => {
-                card.addEventListener('mousemove', function(e) {
-                    const rect = this.getBoundingClientRect();
-                    const x = e.clientX - rect.left;
-                    const y = e.clientY - rect.top;
-                    
-                    const centerX = rect.width / 2;
-                    const centerY = rect.height / 2;
-                    
-                    const rotateX = (y - centerY) / 10;
-                    const rotateY = (centerX - x) / 10;
-                    
-                    this.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-8px)`;
-                });
-                
-                card.addEventListener('mouseleave', function() {
-                    this.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0px)';
-                });
-            });
-
-            // Smooth page transitions
-            function smoothTransition() {
-                document.body.style.opacity = '0';
-                setTimeout(() => {
-                    document.body.style.transition = 'opacity 0.3s ease';
-                    document.body.style.opacity = '1';
-                }, 100);
-            }
-
-            // Initialize page
-            smoothTransition();
-        });
-
-        // Contact form handling (if needed later)
-        function handleContactForm(event) {
-            event.preventDefault();
-            
-            const formData = new FormData(event.target);
-            const data = {
-                fullName: formData.get('fullName'),
-                email: formData.get('email'),
-                role: formData.get('role'),
-                company: formData.get('company'),
-                message: formData.get('message')
-            };
-            
-            // Create mailto link
-            const subject = `Richiesta Strategica da ${data.fullName} - ${data.company}`;
-            const body = `Nome: ${data.fullName}
-Email: ${data.email}
-Ruolo: ${data.role}
-Azienda: ${data.company}
-
-Messaggio:
-${data.message}`;
-            
-            const mailtoLink = `mailto:paolo@cloverventure.it?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-            window.location.href = mailtoLink;
-            
-            // Show success message
-            const button = event.target.querySelector('button[type="submit"]');
-            const originalText = button.textContent;
-            button.textContent = 'Messaggio Inviato!';
-            button.style.background = 'var(--green, #28a745)';
-            
-            setTimeout(() => {
-                button.textContent = originalText;
-                button.style.background = 'var(--clover-teal)';
-                event.target.reset();
-            }, 3000);
-        }
-
-        // Dynamic content loading simulation
-        function loadDynamicContent() {
-            const elements = document.querySelectorAll('.content-loading');
-            elements.forEach((element, index) => {
-                setTimeout(() => {
-                    element.classList.add('content-loaded');
-                }, index * 200);
-            });
-        }
-
-        // Call on page load
-        window.addEventListener('load', loadDynamicContent);
-    </script>
 </body>
 </html>
