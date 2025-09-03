@@ -622,43 +622,52 @@ header .header-actions {
             margin-top: 1rem;
         }
 
-        /* Smooth Ticker */
         .ticker-section {
-            background: var(--black);
-            color: var(--white);
-            padding: 2rem 0;
-            overflow: hidden;
-            position: relative;
-        }
+        background: #111; /* Using a fallback color */
+        color: #fff; /* Using a fallback color */
+        padding: 2rem 0;
+        overflow: hidden;
+        position: relative;
+    }
 
-        .ticker-container {
-            white-space: nowrap;
-            animation: scroll 30s linear infinite;
-        }
+    .ticker-container {
+        /* We use flexbox for better alignment */
+        display: inline-flex;
+        /* The animation is defined here */
+        animation: scroll 30s linear infinite;
+    }
+    
+    /* Pause the animation on hover */
+    .ticker-container:hover {
+        animation-play-state: paused;
+    }
 
-        .ticker-item {
-            display: inline-block;
-            padding: 0 3rem;
-            font-size: 1.2rem;
-            font-weight: 500;
-        }
+    .ticker-item {
+        padding: 0 3rem;
+        font-size: 1.2rem;
+        font-weight: 500;
+        /* Keeps the items from wrapping to the next line */
+        white-space: nowrap;
+    }
 
-        .ticker-item {
-            transition: all 0.5s ease-in-out;
-        }
-        
-        .ticker-item.active {
-            transform: translateX(-100%);
-        }
+    .ticker-item .highlight {
+        color: #00bfa5; /* Using a fallback color */
+    }
 
-        .ticker-item .highlight {
-            color: var(--clover-teal);
+    /* * The key to the seamless loop!
+     * We move the container from its starting position (0)
+     * to the left by 50% of its total width. Since the JS
+     * duplicated the content, 50% is the exact width of the
+     * original items.
+    */
+    @keyframes scroll {
+        0% { 
+            transform: translateX(0); 
         }
-
-        @keyframes scroll {
-            0% { transform: translateX(100%); }
-            100% { transform: translateX(-100%); }
+        100% { 
+            transform: translateX(-50%); 
         }
+    }
 
         /* Methodology Pillars */
         .methodology-pillars {
@@ -1064,12 +1073,12 @@ header .header-actions {
         .board-track {
             display: flex;
             gap: 2rem;
-            animation: boardScroll 60s linear infinite;
+            animation: scroll-board 40s linear infinite;
             width: fit-content;
         }
 
-        .board-track:hover {
-            animation-play-state: paused;
+        .board-slider:hover .board-track {
+        animation-play-state: paused;
         }
 
         .board-card {
@@ -1121,6 +1130,15 @@ header .header-actions {
             font-size: 0.85rem;
             margin-bottom: 1rem;
         }
+
+        @keyframes scroll-board {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(calc(-50% - 10px));
+        }
+    }
 
         .expertise {
             display: flex;
@@ -1783,7 +1801,7 @@ header .header-actions {
 
 
 .shadow-effect {
-  background: #fff;
+  background: var(--light-gray);
   padding: 20px;
   border-radius: 4px;
   text-align: center;
@@ -1801,7 +1819,7 @@ header .header-actions {
   margin: -17px auto 0;
   display: table;
   width: auto;
-  background: #3190E7;
+  background: #00BDA8;
   padding: 9px 35px;
   border-radius: 12px;
   text-align: center;
@@ -1816,6 +1834,25 @@ header .header-actions {
   transform: scale3d(0.8, 0.8, 1);
   transition: all 0.3s ease-in-out;
 }
+        /*#customers-testimonials .shadow-effect::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--clover-teal), rgba(0, 189, 168, 0.5));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
+        }
+
+        #customers-testimonials .shadow-effect:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: var(--shadow-hover);
+            border-radius: 3px 12px 3px 12px;
+        }*/
+
 #customers-testimonials .owl-item.active.center .item {
   opacity: 1;
   transform: scale3d(1.0, 1.0, 1);

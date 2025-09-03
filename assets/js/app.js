@@ -19,7 +19,31 @@ $(document).ready(function() {
 
 document.addEventListener('DOMContentLoaded', function() {
      
-    
+        const tickerContainer = document.querySelector('.ticker-container');
+
+        // Get all the original items inside the container
+        // Array.from() converts the HTMLCollection into an array so we can use forEach
+        const tickerItems = Array.from(tickerContainer.children);
+
+        // Loop through each original item
+        tickerItems.forEach(item => {
+            // Create a deep clone of the item (including its children)
+            const clone = item.cloneNode(true);
+            
+            // Add the cloned item to the end of the container
+            tickerContainer.appendChild(clone);
+        });
+
+        const boardTrack = document.querySelector('.board-track');
+
+        // Get all the original cards
+        const cards = Array.from(boardTrack.children);
+
+        // Duplicate each card and append it to the track
+        cards.forEach(card => {
+            const clone = card.cloneNode(true);
+            boardTrack.appendChild(clone);
+        });
     //Navigazione e altro
 
         const navLinks = document.querySelectorAll('.nav-link');
@@ -34,7 +58,7 @@ document.addEventListener('DOMContentLoaded', function() {
             });
 
             // Navigation functionality
-            navLinks.forEach(link => {
+            /*navLinks.forEach(link => {
                 link.addEventListener('click', function(e) {
                     e.preventDefault();
                     const targetId = this.getAttribute('href').substring(1);
@@ -91,7 +115,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     // Scroll to top
                     window.scrollTo({ top: 0, behavior: 'smooth' });
                 });
-            });
+            });*/
 
             // Smooth scrolling for all internal links
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -280,7 +304,7 @@ ${data.message}`;
 
 
     // Hero Slideshow
-    const slides = document.querySelectorAll('.hero-slideshow .slide');
+    const slides = document.querySelectorAll('.heroriginal-slideshow .slide');
     let currentSlide = 0;
     setInterval(() => {
         slides[currentSlide].classList.remove('active');
@@ -301,8 +325,8 @@ ${data.message}`;
     const cookieBanner = document.createElement('div');
     cookieBanner.innerHTML = `
         <div class="cookie-banner">
-            <p>We use cookies to enhance your experience. By continuing to visit this site you agree to our use of cookies.</p>
-            <button class="btn btn-primary">Accept</button>
+            <p>Usiamo i cookies per migliorare la tua esperienza. Continuando a visitare il nostro sito, acconsenti all'utilizzo dei cookies.</p>
+            <button class="cta-button">Accept</button>
         </div>
     `;
     document.body.appendChild(cookieBanner);
