@@ -19,6 +19,17 @@ $(document).ready(function() {
 
 document.addEventListener('DOMContentLoaded', function() {
      
+        const logosTrack = document.querySelector('.logos-track');
+
+        // Get all original logo items
+        const logos = Array.from(logosTrack.children);
+
+        // Duplicate and append each logo
+        logos.forEach(logo => {
+            const clone = logo.cloneNode(true);
+            logosTrack.appendChild(clone);
+        });    
+    
         const tickerContainer = document.querySelector('.ticker-container');
 
         // Get all the original items inside the container
@@ -57,67 +68,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 nav.classList.toggle('active');
             });
 
-            // Navigation functionality
-            /*navLinks.forEach(link => {
-                link.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const targetId = this.getAttribute('href').substring(1);
-                    
-                    // Hide all sections
-                    sections.forEach(section => {
-                        section.classList.remove('active');
-                    });
-                    
-                    if (targetId === 'home') {
-                        // Show hero section and all homepage sections in CORRECT order
-                        heroSection.style.display = 'flex';
-                        document.querySelector('.partner-logos').style.display = 'block';
-                        document.querySelector('.stats').style.display = 'block';
-                        document.querySelector('.petal-cards').style.display = 'block';
-                        document.querySelector('.ticker-section').style.display = 'block';
-                        document.querySelector('.methodology-pillars').style.display = 'block';
-                        document.querySelector('.nextgen-hackathon').style.display = 'block';
-                        document.querySelector('.ecosystem-section').style.display = 'block';
-                        document.querySelector('.team-section').style.display = 'block';
-                        document.querySelector('.scientific-board').style.display = 'block';
-                        document.querySelector('.osservatorio-section').style.display = 'block';
-                        document.querySelector('.testimonials-section').style.display = 'block';
-                        document.querySelector('.contact-section').style.display = 'block';
-                    } else {
-                        // Hide hero and all homepage sections, show target section
-                        heroSection.style.display = 'none';
-                        document.querySelector('.partner-logos').style.display = 'none';
-                        document.querySelector('.stats').style.display = 'none';
-                        document.querySelector('.petal-cards').style.display = 'none';
-                        document.querySelector('.ticker-section').style.display = 'none';
-                        document.querySelector('.methodology-pillars').style.display = 'none';
-                        document.querySelector('.nextgen-hackathon').style.display = 'none';
-                        document.querySelector('.ecosystem-section').style.display = 'none';
-                        document.querySelector('.team-section').style.display = 'none';
-                        document.querySelector('.scientific-board').style.display = 'none';
-                        document.querySelector('.osservatorio-section').style.display = 'none';
-                        document.querySelector('.testimonials-section').style.display = 'none';
-                        document.querySelector('.contact-section').style.display = 'none';
-                        
-                        const targetSection = document.getElementById(targetId);
-                        if (targetSection) {
-                            targetSection.classList.add('active');
-                        }
-                    }
-
-                    // Update active nav link
-                    navLinks.forEach(nl => nl.classList.remove('active'));
-                    this.classList.add('active');
-
-                    // Close mobile menu
-                    nav.classList.remove('active');
-
-                    // Scroll to top
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                });
-            });*/
-
-            // Smooth scrolling for all internal links
+            
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function(e) {
                     if (this.classList.contains('nav-link')) return; // Already handled above

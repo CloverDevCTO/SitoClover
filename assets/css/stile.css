@@ -411,6 +411,8 @@ header .header-actions {
             width: 100%;
             overflow: hidden;
             position: relative;
+            -webkit-mask-image: linear-gradient(to right, transparent, black 20%, black 80%, transparent);
+        mask-image: linear-gradient(to right, transparent, black 20%, black 80%, transparent);
         }
 
         .logos-container::before,
@@ -436,8 +438,12 @@ header .header-actions {
 
         .logos-track {
             display: flex;
-            animation: logoScroll 30s linear infinite;
+            animation: scroll-logos 35s linear infinite;
             width: calc(200% + 4rem);
+        }
+
+        .partner-logos:hover .logos-track {
+        animation-play-state: paused;
         }
 
         .logo-item {
@@ -457,10 +463,15 @@ header .header-actions {
             border-radius: 2px 8px 2px 8px;
         }
 
-        @keyframes logoScroll {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
+        @keyframes scroll-logos {
+        0% {
+            transform: translateX(0);
         }
+        100% {
+            /* Move by half the track's width plus half the gap */
+            transform: translateX(calc(-50% - 30px));
+        }
+    }
 
         /* Stats */
         .stats {
