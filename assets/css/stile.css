@@ -17,7 +17,7 @@
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
             line-height: 1.6;
             color: var(--dark-gray);
             background-color: var(--white);
@@ -154,6 +154,7 @@
             border: none;
             font-size: 1.5rem;
             cursor: pointer;
+            color: black;
         }
 
         /* Hero Section */
@@ -1607,7 +1608,7 @@ header .header-actions {
             }
 
             .stats-grid {
-                grid-template-columns: repeat(2, 1fr);
+                grid-template-columns: repeat(1, 1fr);
             }
 
             .service-grid {
@@ -1666,7 +1667,7 @@ header .header-actions {
             }
 
             .impact-grid {
-                grid-template-columns: repeat(2, 1fr);
+                grid-template-columns: repeat(1, 1fr);
                 gap: 1rem;
             }
 

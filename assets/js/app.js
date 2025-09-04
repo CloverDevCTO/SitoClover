@@ -272,7 +272,7 @@ ${data.message}`;
         }
     }
 
-    // Cookie Banner
+    /* Cookie Banner
     const cookieBanner = document.createElement('div');
     cookieBanner.innerHTML = `
         <div class="cookie-banner">
@@ -283,5 +283,5 @@ ${data.message}`;
     document.body.appendChild(cookieBanner);
     cookieBanner.querySelector('button').addEventListener('click', () => {
         cookieBanner.style.display = 'none';
-    });
+    });*/
 });
